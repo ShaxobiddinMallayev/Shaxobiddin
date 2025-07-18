@@ -1,115 +1,155 @@
-
 <!DOCTYPE html>
 <html lang="uz">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shahobiddin - Shaxsiy sayt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shahobiddin Mallayev - Shaxsiy sayt</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins&display=swap" rel="stylesheet">
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background: #cce9ff;
-      text-align: center;
-    }
-    .container {
-      max-width: 700px;
-      margin: 80px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 15px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-    }
-    h1 {
-      color: #2c3e50;
-      margin-bottom: 10px;
-    }
-    p {
-      color: #666;
-      margin-bottom: 30px;
-    }
-    .btn {
-      display: block;
-      width: 80%;
-      margin: 10px auto;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      background: #3498db;
-      color: white;
-      font-size: 16px;
-      text-decoration: none;
-      transition: 0.3s;
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom right, #fffef5, #ffeaa7);
+    min-height: 100vh;
+    text-align: center;
+  }
+
+  .container {
+    max-width: 700px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+
+  h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #555;
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+
+  .btn {
+    display: block;
+    width: 85%;
+    margin: 12px auto;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 999px;
+    background: linear-gradient(to right, #ffd700, #f1c40f);
+    color: #3d2e00;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
+    transition: all 0.3s ease;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    a.btn:hover,
+    button.btn:hover {
       cursor: pointer;
+      transform: scale(1.06) rotate(-0.5deg);
+      background: linear-gradient(to right, #ffe259, #ffa751);
+      box-shadow: 0 8px 18px rgba(255, 200, 0, 0.6);
     }
-    .btn:hover {
-      background: #2980b9;
+  }
+
+  @media (hover: none) and (pointer: coarse) {
+    a.btn:active,
+    button.btn:active {
+      transform: scale(0.97);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
     }
-    .box {
-      display: none;
-      margin-top: 30px;
-      text-align: left;
-    }
-    .block-style {
-      background-color: #d0e6ff;
-      padding: 20px;
-      border-radius: 10px;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-      margin: 0;
-    }
-    ul li::before {
-      content: "";
-    }
-    h3 {
-      color: #003366;
-      margin-top: 0;
-    }
-  </style>
+  }
+
+  .box {
+    display: none;
+    margin-top: 30px;
+    text-align: left;
+  }
+
+  .block-style {
+    background-color: #fffaf1;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    color: #444;
+    font-size: 15px;
+  }
+
+  ul li {
+    position: relative;
+    padding-left: 24px;
+    margin-bottom: 10px;
+  }
+
+  ul li::before {
+    content: "⭐";
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  h3 {
+    color: #d35400;
+    margin-top: 0;
+    font-size: 20px;
+  }
+</style>
 </head>
 <body>
   <div class="container">
     <h1>Shahobiddin Mallayev</h1>
-    <p>📞 Telefon: +998 94 993 9399</p>
+    <p>📞 <a href="tel:+998949939399">Telefon: +998 94 993 9399</a></p>
 
     <a class="btn" href="https://t.me/sidiqivich" target="_blank">Telegram</a>
     <a class="btn" href="https://instagram.com/mshakhobiddin_01" target="_blank">Instagram</a>
     <a class="btn" href="https://wa.me/998936010203" target="_blank">WhatsApp</a>
 
-    <!-- Xizmatlar -->
     <button class="btn" onclick="toggleXizmatlar()">Xizmatlarimni ko‘rish</button>
     <div class="box" id="xizmatlar">
       <div class="block-style">
         <h3>🔵 Xizmatlarimiz haqida qisqacha:</h3>
         <ul>
-          <li>🔷 Davlat xizmatlari: STIR, JShShIR, E-imzo va boshqalar</li>
-          <li>🔷 Paynet orqali barcha to‘lovlar: kommunal, internet, telefon, jarima va h.k.</li>
-          <li>🔷 Kitob chiqarish, rasm chiqarish, skanerlash</li>
-          <li>🔷 Aksessuarlar savdosi</li>
+          <li>Davlat xizmatlari: STIR, JShShIR, E-imzo va boshqalar</li>
+          <li>Paynet orqali barcha to‘lovlar: kommunal, internet, telefon, jarima va h.k.</li>
+          <li>Kitob chiqarish, rasm chiqarish, skanerlash</li>
+          <li>Aksessuarlar savdosi</li>
         </ul>
       </div>
     </div>
 
-    <!-- Avto Sug‘urta va Ishonchnoma -->
     <button class="btn" onclick="toggleAvto()">Avtosug‘urta va ishonchnoma narxlari</button>
     <div class="box" id="avto">
       <div class="block-style">
         <h3>🚗 Avtosug‘urta narxlari:</h3>
         <ul>
-          <li>➡️ 20 kunlik – 8 000 so‘m <small>(+5 kishigacha)</small></li>
-          <li>➡️ 6 oylik – 28 000 so‘m <small>(+5 kishigacha)</small></li>
-          <li>➡️ 12 oylik – 40 000 so‘m <small>(+5 kishigacha)</small></li>
-          <li>➡️ Universal – 120 000 so‘m <small>(null)</small></li>
+          <li>20 kunlik – 8 000 so‘m (+5 kishigacha)</li>
+          <li>6 oylik – 28 000 so‘m (+5 kishigacha)</li>
+          <li>12 oylik – 40 000 so‘m (+5 kishigacha)</li>
+          <li>Universal – 120 000 so‘m (null)</li>
         </ul>
 
         <h3 style="margin-top: 25px;">📄 Ishonchnoma narxlari:</h3>
         <ul>
-          <li>➡️ 1 oylik – 100 000 so‘m</li>
-          <li>➡️ 6 oylik – 400 000 so‘m</li>
-          <li>➡️ 3 yillik – 800 000 so‘m</li>
+          <li>1 oylik – 100 000 so‘m</li>
+          <li>6 oylik – 400 000 so‘m</li>
+          <li>3 yillik – 800 000 so‘m</li>
         </ul>
       </div>
     </div>
