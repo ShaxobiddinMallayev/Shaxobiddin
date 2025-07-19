@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shahobiddin Mallayev - Shaxsiy sayt</title>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&family=Poppins&display=swap" rel="stylesheet" />
   <style>
     body {
       margin: 0;
@@ -17,18 +17,32 @@
 
     .container {
       max-width: 700px;
-      margin: 60px auto;
+      margin: 40px auto;
       background: #ffffff;
-      padding: 30px;
+      padding: 20px;
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
 
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .top-bar .left,
+    .top-bar .right {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
     h1 {
       font-family: 'Merriweather', serif;
-      font-size: 32px;
+      font-size: 28px;
       color: #2c3e50;
-      margin-bottom: 10px;
+      margin: 0 auto;
     }
 
     p {
@@ -39,31 +53,41 @@
 
     .btn {
       display: block;
-      width: 85%;
-      margin: 12px auto;
-      padding: 14px;
-      font-size: 16px;
+      width: 90%;
+      max-width: 400px;
+      margin: 14px auto;
+      padding: 16px 20px;
+      font-size: 17px;
       font-weight: bold;
       border: none;
       border-radius: 999px;
       background: linear-gradient(to right, #ffd700, #f1c40f);
       color: #3d2e00;
       box-shadow: 0 4px 12px rgba(255, 215, 0, 0.4);
-      transition: transform 0.2s ease, background 0.3s ease;
+      transition: transform 0.25s ease, background 0.3s ease;
       text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
     }
 
-    .btn:active {
-      transform: scale(0.97) translateY(2px);
+    .btn:hover {
+      cursor: pointer;
+      transform: scale(1.06);
+      background: linear-gradient(to right, #ffe259, #ffa751);
+      box-shadow: 0 8px 18px rgba(255, 200, 0, 0.6);
     }
 
-    @media (hover: hover) and (pointer: fine) {
-      .btn:hover {
-        cursor: pointer;
-        transform: scale(1.06);
-        background: linear-gradient(to right, #ffe259, #ffa751);
-        box-shadow: 0 8px 18px rgba(255, 200, 0, 0.6);
-      }
+    .btn:active {
+      animation: shake 0.3s;
+      transform: scale(0.98);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    @keyframes shake {
+      0% { transform: translateX(0); }
+      20% { transform: translateX(-2px); }
+      40% { transform: translateX(2px); }
+      60% { transform: translateX(-1px); }
+      80% { transform: translateX(1px); }
+      100% { transform: translateX(0); }
     }
 
     .modal {
@@ -79,8 +103,9 @@
     }
 
     .modal-content {
-      background: white;
-      padding: 25px;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(4px);
+      padding: 20px;
       border-radius: 15px;
       max-width: 90%;
       max-height: 90%;
@@ -98,7 +123,6 @@
     .modal ul {
       list-style: none;
       padding-left: 0;
-      margin: 0;
       font-size: 15px;
     }
 
@@ -109,7 +133,7 @@
     }
 
     .modal ul li::before {
-      content: "\2b50";
+      content: "⭐";
       position: absolute;
       left: 0;
       top: 0;
@@ -121,55 +145,104 @@
       color: #333;
       font-weight: normal;
     }
+
+    .lang-btn-icon, .location-btn-icon {
+      font-size: 16px;
+      padding: 6px 10px;
+      border: none;
+      border-radius: 50%;
+      background: #f4f4f4;
+      cursor: pointer;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+      text-decoration: none;
+    }
+
+    @media screen and (max-width: 600px) {
+      .container {
+        margin: 20px 10px;
+        padding: 15px;
+      }
+      h1 {
+        font-size: 22px;
+      }
+      p {
+        font-size: 14px;
+      }
+      .btn {
+        font-size: 15px;
+        padding: 14px 16px;
+      }
+      .lang-btn-icon, .location-btn-icon {
+        font-size: 14px;
+        padding: 5px 8px;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>Shahobiddin Mallayev</h1>
-    <p>📞 <a href="tel:+998949939399">Telefon: +998 94 993 9399</a></p>
+    <div class="top-bar">
+      <div class="left">
+        <a class="location-btn-icon" href="https://maps.google.com/?q=39.78597,67.25013" target="_blank" title="Lokatsiya">📍</a>
+      </div>
+      <h1>Shahobiddin Mallayev</h1>
+      <div class="right">
+        <span id="currentLang">UZ</span>
+        <button class="lang-btn-icon" onclick="openModal('langModal')">🌐</button>
+      </div>
+    </div>
 
+    <p>📞 <a href="tel:+998949939399">Telefon: +998 94 993 9399</a></p>
     <a class="btn" href="https://t.me/sidiqivich" target="_blank">Telegram</a>
     <a class="btn" href="https://instagram.com/mshakhobiddin_01" target="_blank">Instagram</a>
     <a class="btn" href="https://wa.me/998936010203" target="_blank">WhatsApp</a>
-
-    <button class="btn" onclick="openModal('modal2_xizmat')">Xizmatlarimiz haqida</button>
-    <button class="btn" onclick="openModal('modal2_avto')">Avtosug‘urta va Ishonchnoma narxlari</button>
-
-    <p style="font-size: 13px; color: #777; margin-top: 20px;">
-      🕒 Asosiy ish vaqti 09:00 dan 21:00 gacha
-    </p>
+    <button class="btn" onclick="openModal('modal2_xizmat')">Xizmatlarimni ko‘rish</button>
+    <button class="btn" onclick="openModal('modal2_avto')">Avtosug‘urta narxlari</button>
+    <p style="font-size: 14px; color: #444; margin-top: 30px;">🕘 Ish vaqti: 09:00 - 21:00</p>
   </div>
 
-  <div id="modal2_xizmat" class="modal">
+  <!-- Xizmatlar modal -->
+  <div class="modal" id="modal2_xizmat">
     <div class="modal-content">
-      <h3>🔵 Xizmatlarimiz haqida:</h3>
+      <h3>🔵 Xizmatlar:</h3>
       <ul>
-        <li>Davlat xizmatlari: STIR, JShShIR, E-imzo va boshqalar</li>
-        <li>Paynet orqali barcha to‘lovlar: kommunal, internet, telefon, jarima va h.k.</li>
-        <li>Kitob chiqarish, rasm chiqarish, skanerlash</li>
+        <li>STIR, JShShIR, E-imzo va boshqalar</li>
+        <li>Paynet orqali to‘lovlar</li>
+        <li>Kitob chiqarish, rasm, skanerlash</li>
         <li>Aksessuarlar savdosi</li>
       </ul>
-      <button class="btn back-btn" onclick="backModal('modal2_xizmat')">◀️ Orqaga</button>
+      <button class="btn back-btn" onclick="closeModal('modal2_xizmat')">◀️ Orqaga</button>
     </div>
   </div>
 
-  <div id="modal2_avto" class="modal">
+  <!-- Avto modal -->
+  <div class="modal" id="modal2_avto">
     <div class="modal-content">
       <h3>🚗 Avtosug‘urta narxlari:</h3>
       <ul>
-        <li>20 kunlik – 8 000 so‘m (+5 kishigacha)</li>
-        <li>6 oylik – 28 000 so‘m (+5 kishigacha)</li>
-        <li>12 oylik – 40 000 so‘m (+5 kishigacha)</li>
+        <li>20 kunlik – 8 000 so‘m</li>
+        <li>6 oylik – 28 000 so‘m</li>
+        <li>12 oylik – 40 000 so‘m</li>
         <li>Universal – 120 000 so‘m</li>
       </ul>
-
       <h3 style="margin-top: 25px;">📄 Ishonchnoma narxlari:</h3>
       <ul>
         <li>1 oylik – 100 000 so‘m</li>
         <li>6 oylik – 400 000 so‘m</li>
         <li>3 yillik – 800 000 so‘m</li>
       </ul>
-      <button class="btn back-btn" onclick="backModal('modal2_avto')">◀️ Orqaga</button>
+      <button class="btn back-btn" onclick="closeModal('modal2_avto')">◀️ Orqaga</button>
+    </div>
+  </div>
+
+  <!-- Til modal -->
+  <div class="modal" id="langModal">
+    <div class="modal-content">
+      <h3>🌐 Tilni tanlang:</h3>
+      <button class="btn" onclick="setLanguage('uz')">🇺🇿 O‘zbekcha</button>
+      <button class="btn" onclick="setLanguage('kr')">🇺🇿 Ўзбекча (KR)</button>
+      <button class="btn" onclick="setLanguage('ru')">🇷🇺 Русский</button>
+      <button class="btn back-btn" onclick="closeModal('langModal')">◀️ Orqaga</button>
     </div>
   </div>
 
@@ -178,13 +251,53 @@
       document.getElementById(id).style.display = 'flex';
     }
 
-    function backModal(currentId) {
-      document.getElementById(currentId).style.display = 'none';
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
     }
 
-    window.onclick = function(event) {
+    function setLanguage(lang) {
+      localStorage.setItem("selectedLang", lang);
+      applyLanguage(lang);
+      closeModal('langModal');
+    }
+
+    function applyLanguage(lang) {
+      const texts = {
+        "uz": {
+          "xizmat": "Xizmatlarimni ko‘rish",
+          "avto": "Avtosug‘urta narxlari",
+          "title": "Shahobiddin Mallayev",
+          "short": "UZ"
+        },
+        "kr": {
+          "xizmat": "Хизматларимни кўриш",
+          "avto": "Автосуғурта нархлари",
+          "title": "Шаҳобиддин Маллаев",
+          "short": "KR"
+        },
+        "ru": {
+          "xizmat": "Посмотреть услуги",
+          "avto": "Цены на автострахование",
+          "title": "Шахобиддин Маллаев",
+          "short": "RU"
+        }
+      };
+      const t = texts[lang];
+      if (!t) return;
+      document.querySelector("h1").textContent = t.title;
+      document.querySelector("button[onclick*='modal2_xizmat']").textContent = t.xizmat;
+      document.querySelector("button[onclick*='modal2_avto']").textContent = t.avto;
+      document.getElementById("currentLang").textContent = t.short;
+    }
+
+    window.onload = function () {
+      const lang = localStorage.getItem("selectedLang") || "uz";
+      applyLanguage(lang);
+    };
+
+    window.onclick = function (event) {
       const modals = document.querySelectorAll('.modal');
-      modals.forEach(function(modal) {
+      modals.forEach(function (modal) {
         if (event.target === modal) {
           modal.style.display = "none";
         }
