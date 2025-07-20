@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="uz">
 <head>
@@ -14,7 +15,6 @@
       min-height: 100vh;
       text-align: center;
     }
-
     .container {
       max-width: 700px;
       margin: 40px auto;
@@ -23,34 +23,29 @@
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     }
-
     .top-bar {
       display: flex;
       justify-content: space-between;
       align-items: center;
       margin-bottom: 20px;
     }
-
     .top-bar .left,
     .top-bar .right {
       display: flex;
       align-items: center;
       gap: 6px;
     }
-
     h1 {
       font-family: 'Merriweather', serif;
       font-size: 28px;
       color: #2c3e50;
       margin: 0 auto;
     }
-
     p {
       color: #555;
       font-size: 16px;
       margin-bottom: 25px;
     }
-
     .btn {
       display: block;
       width: 90%;
@@ -67,20 +62,17 @@
       transition: transform 0.25s ease, background 0.3s ease;
       text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
     }
-
     .btn:hover {
       cursor: pointer;
       transform: scale(1.06);
       background: linear-gradient(to right, #ffe259, #ffa751);
       box-shadow: 0 8px 18px rgba(255, 200, 0, 0.6);
     }
-
     .btn:active {
       animation: shake 0.3s;
       transform: scale(0.98);
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     }
-
     @keyframes shake {
       0% { transform: translateX(0); }
       20% { transform: translateX(-2px); }
@@ -89,7 +81,6 @@
       80% { transform: translateX(1px); }
       100% { transform: translateX(0); }
     }
-
     .modal {
       display: none;
       position: fixed;
@@ -101,7 +92,6 @@
       align-items: center;
       z-index: 9999;
     }
-
     .modal-content {
       background: rgba(255,255,255,0.95);
       backdrop-filter: blur(4px);
@@ -113,39 +103,27 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.2);
       text-align: left;
     }
-
     .modal h3 {
       color: #d35400;
       margin-top: 0;
       font-size: 20px;
     }
-
     .modal ul {
       list-style: none;
       padding-left: 0;
       font-size: 15px;
     }
-
     .modal ul li {
       position: relative;
       padding-left: 24px;
       margin-bottom: 10px;
     }
-
-    .modal ul li::before {
-      content: "⭐";
-      position: absolute;
-      left: 0;
-      top: 0;
-    }
-
     .back-btn {
       margin-top: 20px;
       background-color: #eee;
       color: #333;
       font-weight: normal;
     }
-
     .lang-btn-icon, .location-btn-icon {
       font-size: 16px;
       padding: 6px 10px;
@@ -156,28 +134,49 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.2);
       text-decoration: none;
     }
-
-    @media screen and (max-width: 600px) {
-      .container {
-        margin: 20px 10px;
-        padding: 15px;
-      }
-      h1 {
-        font-size: 22px;
-      }
-      p {
-        font-size: 14px;
-      }
-      .btn {
-        font-size: 15px;
-        padding: 14px 16px;
-      }
-      .lang-btn-icon, .location-btn-icon {
-        font-size: 14px;
-        padding: 5px 8px;
-      }
+    @media (max-width: 480px) {
+    .container {
+      margin: 20px 10px;
+      padding: 15px;
     }
+
+    h1 {
+      font-size: 22px;
+    }
+
+    .btn {
+      font-size: 15px;
+      padding: 12px 16px;
+    }
+
+    .modal-content {
+      padding: 15px;
+    }
+
+    .modal h3 {
+      font-size: 18px;
+    }
+
+    .modal ul {
+      font-size: 14px;
+    }
+
+    .top-bar {
+      flex-direction: column;
+      gap: 10px;
+    }
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .modal-content {
+    box-sizing: border-box;
+  }
   </style>
+
 </head>
 <body>
   <div class="container">
@@ -191,14 +190,14 @@
         <button class="lang-btn-icon" onclick="openModal('langModal')">🌐</button>
       </div>
     </div>
-
     <p>📞 <a href="tel:+998949939399">Telefon: +998 94 993 9399</a></p>
     <a class="btn" href="https://t.me/sidiqivich" target="_blank">Telegram</a>
     <a class="btn" href="https://instagram.com/mshakhobiddin_01" target="_blank">Instagram</a>
     <a class="btn" href="https://wa.me/998936010203" target="_blank">WhatsApp</a>
-    <button class="btn" onclick="openModal('modal2_xizmat')">Xizmatlarimni ko‘rish</button>
-    <button class="btn" onclick="openModal('modal2_avto')">Avtosug‘urta narxlari</button>
-    <p style="font-size: 14px; color: #444; margin-top: 30px;">🕘 Ish vaqti: 09:00 - 21:00</p>
+    <button class="btn" onclick="openModal('modal2_xizmat')">Xizmatlarimizni ko‘rish</button>
+    <button class="btn" onclick="openModal('modal2_avto')">Avtosug‘urta va Ishonchnoma narxlari</button>
+    <button class="btn" onclick="openModal('modal2_aksiya')">Aksiyalarimiz</button>
+    <p id="workTime" style="font-size: 14px; color: #444; margin-top: 30px;">🕘 Ish vaqti: 09:00 - 21:00</p>
   </div>
 
   <!-- Xizmatlar modal -->
@@ -206,36 +205,52 @@
     <div class="modal-content">
       <h3>🔵 Xizmatlar:</h3>
       <ul>
-        <li>STIR, JShShIR, E-imzo va boshqalar</li>
-        <li>Paynet orqali to‘lovlar</li>
-        <li>Kitob chiqarish, rasm, skanerlash</li>
-        <li>Aksessuarlar savdosi</li>
+        <li id="xizmat1">⭐STIR, JShShIR, E-imzo va boshqalar</li>
+        <li id="xizmat2">⭐Paynet orqali to‘lovlar</li>
+        <li id="xizmat3">⭐Kitob chiqarish, rasm, skanerlash</li>
+        <li id="xizmat4">⭐Aksessuarlar savdosi</li>
       </ul>
       <button class="btn back-btn" onclick="closeModal('modal2_xizmat')">◀️ Orqaga</button>
     </div>
   </div>
 
-  <!-- Avto modal -->
-  <div class="modal" id="modal2_avto">
+ <!-- Avto modal -->
+<div class="modal" id="modal2_avto">
+  <div class="modal-content">
+    <h3 id="avtoTitle">🚗 Avtosug‘urta narxlari:</h3>
+    <ul>
+      <li id="avto1">⭐20 kunlik – 8 000 so‘m</li>
+      <li id="avto2">⭐6 oylik – 28 000 so‘m</li>
+      <li id="avto3">⭐12 oylik – 40 000 so‘m</li>
+      <li id="avto4">⭐Universal – 120 000 so‘m</li>
+    </ul>
+    <h3 id="ishonchTitle" style="margin-top: 25px;">📄 Ishonchnoma narxlari:</h3>
+    <ul>
+      <li id="ishonch1">⭐1 oylik – 100 000 so‘m</li>
+      <li id="ishonch2">⭐6 oylik – 400 000 so‘m</li>
+      <li id="ishonch3">⭐3 yillik – 800 000 so‘m</li>
+    </ul>
+    <button class="btn back-btn" onclick="closeModal('modal2_avto')">◀️ Orqaga</button>
+  </div>
+</div>
+
+  <!-- Aksiya modal -->
+  <div class="modal" id="modal2_aksiya">
     <div class="modal-content">
-      <h3>🚗 Avtosug‘urta narxlari:</h3>
+      <h3>✨ SUPER AKSIYA! — 1+1 SIM KARTA! ✨</h3>
       <ul>
-        <li>20 kunlik – 8 000 so‘m</li>
-        <li>6 oylik – 28 000 so‘m</li>
-        <li>12 oylik – 40 000 so‘m</li>
-        <li>Universal – 120 000 so‘m</li>
+        <li><strong>Bitta SIM karta olganlarga — ikkinchisi BEPUL!</strong></li>
+        <li>🌐 Aksiya faqat Ucell va Uzmobile uchun</li>
+        <li>📄 Pasport bilan kelish kifoya</li>
+        <li>⏳ Aksiya cheklangan muddatda amal qiladi</li>
+        <li>⚠️ Do'stingizga ham ulashing!</li>
+        <li>📞 Murojaat: +998 94 993 9399</li>
       </ul>
-      <h3 style="margin-top: 25px;">📄 Ishonchnoma narxlari:</h3>
-      <ul>
-        <li>1 oylik – 100 000 so‘m</li>
-        <li>6 oylik – 400 000 so‘m</li>
-        <li>3 yillik – 800 000 so‘m</li>
-      </ul>
-      <button class="btn back-btn" onclick="closeModal('modal2_avto')">◀️ Orqaga</button>
+      <button class="btn back-btn" onclick="closeModal('modal2_aksiya')">◀️ Orqaga</button>
     </div>
   </div>
 
-  <!-- Til modal -->
+  <!-- Til tanlash -->
   <div class="modal" id="langModal">
     <div class="modal-content">
       <h3>🌐 Tilni tanlang:</h3>
@@ -247,62 +262,130 @@
   </div>
 
   <script>
-    function openModal(id) {
-      document.getElementById(id).style.display = 'flex';
+  const texts = {
+    "uz": {
+      "title": "Shahobiddin Mallayev",
+      "short": "UZ",
+      "workTime": "🕘 Ish vaqti: 09:00 - 21:00",
+      "xizmat": "Xizmatlarimizni ko‘rish",
+      "avto": "Avtosug‘urta va Ishonchnoma narxlari",
+      "aksiya": "Aksiyalarimiz",
+      "xizmat1": "⭐STIR, JShShIR, E-imzo va boshqalar",
+      "xizmat2": "⭐Paynet orqali to‘lovlar",
+      "xizmat3": "⭐Kitob chiqarish, rasm, skanerlash",
+      "xizmat4": "⭐Aksessuarlar savdosi",
+      "avtoTitle": "🚗 Avtosug‘urta narxlari:",
+      "avto1": "⭐20 kunlik – 8 000 so‘m",
+      "avto2": "⭐6 oylik – 28 000 so‘m",
+      "avto3": "⭐12 oylik – 40 000 so‘m",
+      "avto4": "⭐Universal – 120 000 so‘m",
+      "ishonchTitle": "📄 Ishonchnoma narxlari:",
+      "ishonch1": "⭐1 oylik – 100 000 so‘m",
+      "ishonch2": "⭐6 oylik – 400 000 so‘m",
+      "ishonch3": "⭐3 yillik – 800 000 so‘m"
+    },
+    "kr": {
+      "title": "Шаҳобиддин Маллаев",
+      "short": "UZ(kr)",
+      "workTime": "🕘 Иш вақти: 09:00 - 21:00",
+      "xizmat": "Хизматларимизни кўриш",
+      "avto": "Автосуғурта ва Ишончнома нархлари",
+      "aksiya": "Аксияларимиз",
+      "xizmat1": "⭐СТИР, ЖШШИР, Э-имзо ва бошқалар",
+      "xizmat2": "⭐Пайнет орқали тўловлар",
+      "xizmat3": "⭐Китоб чиқариш, расм, сканерлаш",
+      "xizmat4": "⭐Аксессуарлар савдоси",
+      "avtoTitle": "🚗 Автосуғурта нархлари:",
+      "avto1": "⭐20 кунлик – 8 000 сўм",
+      "avto2": "⭐6 ойлик – 28 000 сўм",
+      "avto3": "⭐12 ойлик – 40 000 сўм",
+      "avto4": "⭐Универсал – 120 000 сўм",
+      "ishonchTitle": "📄 Ишончнома нархлари:",
+      "ishonch1": "⭐1 ойлик – 100 000 сўм",
+      "ishonch2": "⭐6 ойлик – 400 000 сўм",
+      "ishonch3": "⭐3 йиллик – 800 000 сўм"
+    },
+    "ru": {
+      "title": "Шахобиддин Маллаев",
+      "short": "RU",
+      "workTime": "🕘 Время работы: 09:00 - 21:00",
+      "xizmat": "Просмотр наших услуг",
+      "avto": "Цены на автострахование и доверенности",
+      "aksiya": "Наши акции",
+      "xizmat1": "⭐ИНН, ПИНФЛ, ЭЦП и другое",
+      "xizmat2": "⭐Платежи через Paynet",
+      "xizmat3": "⭐Печать книг, фото, сканирование",
+      "xizmat4": "⭐Продажа аксессуаров",
+      "avtoTitle": "🚗 Цены на автострахование:",
+      "avto1": "⭐20 дней – 8 000 сум",
+      "avto2": "⭐6 месяцев – 28 000 сум",
+      "avto3": "⭐12 месяцев – 40 000 сум",
+      "avto4": "⭐Универсал – 120 000 сум",
+      "ishonchTitle": "📄 Цены на доверенности:",
+      "ishonch1": "⭐1 месяц – 100 000 сум",
+      "ishonch2": "⭐6 месяцев – 400 000 сум",
+      "ishonch3": "⭐3 года – 800 000 сум"
     }
+  };
 
-    function closeModal(id) {
-      document.getElementById(id).style.display = 'none';
+  function applyLanguage(lang) {
+    const t = texts[lang];
+    if (!t) return;
+
+    // Sarlavha
+    document.querySelector("h1").textContent = t.title;
+
+    // Til qisqartmasi
+    document.getElementById("currentLang").textContent = t.short;
+
+    // Ish vaqti
+    document.getElementById("workTime").textContent = t.workTime;
+
+    // Tugmalar (xizmatlar, avto, aksiya)
+    document.querySelector("button[onclick*='modal2_xizmat']").textContent = t.xizmat;
+    document.querySelector("button[onclick*='modal2_avto']").textContent = t.avto;
+    document.querySelector("button[onclick*='modal2_aksiya']").textContent = t.aksiya;
+
+    // Xizmatlar ro‘yxati
+    document.getElementById("xizmat1").textContent = t.xizmat1;
+    document.getElementById("xizmat2").textContent = t.xizmat2;
+    document.getElementById("xizmat3").textContent = t.xizmat3;
+    document.getElementById("xizmat4").textContent = t.xizmat4;
+
+    // Avtosug‘urta bo‘limi
+    document.getElementById("avtoTitle").textContent = t.avtoTitle;
+    document.getElementById("avto1").textContent = t.avto1;
+    document.getElementById("avto2").textContent = t.avto2;
+    document.getElementById("avto3").textContent = t.avto3;
+    document.getElementById("avto4").textContent = t.avto4;
+
+    // Ishonchnoma bo‘limi
+    document.getElementById("ishonchTitle").textContent = t.ishonchTitle;
+    document.getElementById("ishonch1").textContent = t.ishonch1;
+    document.getElementById("ishonch2").textContent = t.ishonch2;
+    document.getElementById("ishonch3").textContent = t.ishonch3;
+  }
+</script>
+<script>
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+      modal.style.display = 'flex';
     }
+  }
 
-    function setLanguage(lang) {
-      localStorage.setItem("selectedLang", lang);
-      applyLanguage(lang);
-      closeModal('langModal');
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    if (modal) {
+      modal.style.display = 'none';
     }
+  }
 
-    function applyLanguage(lang) {
-      const texts = {
-        "uz": {
-          "xizmat": "Xizmatlarimni ko‘rish",
-          "avto": "Avtosug‘urta narxlari",
-          "title": "Shahobiddin Mallayev",
-          "short": "UZ"
-        },
-        "kr": {
-          "xizmat": "Хизматларимни кўриш",
-          "avto": "Автосуғурта нархлари",
-          "title": "Шаҳобиддин Маллаев",
-          "short": "KR"
-        },
-        "ru": {
-          "xizmat": "Посмотреть услуги",
-          "avto": "Цены на автострахование",
-          "title": "Шахобиддин Маллаев",
-          "short": "RU"
-        }
-      };
-      const t = texts[lang];
-      if (!t) return;
-      document.querySelector("h1").textContent = t.title;
-      document.querySelector("button[onclick*='modal2_xizmat']").textContent = t.xizmat;
-      document.querySelector("button[onclick*='modal2_avto']").textContent = t.avto;
-      document.getElementById("currentLang").textContent = t.short;
-    }
+  function setLanguage(lang) {
+    applyLanguage(lang);
+    closeModal('langModal');
+  }
+</script>
 
-    window.onload = function () {
-      const lang = localStorage.getItem("selectedLang") || "uz";
-      applyLanguage(lang);
-    };
-
-    window.onclick = function (event) {
-      const modals = document.querySelectorAll('.modal');
-      modals.forEach(function (modal) {
-        if (event.target === modal) {
-          modal.style.display = "none";
-        }
-      });
-    }
-  </script>
 </body>
 </html>
