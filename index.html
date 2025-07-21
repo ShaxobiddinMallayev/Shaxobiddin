@@ -107,6 +107,14 @@
       margin-top: 0;
       font-size: 20px;
     }
+    .modal h4 {
+      color: black;
+      font-weight: bold;
+      margin-top: 0;
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
     .modal ul {
       list-style: none;
       padding-left: 0;
@@ -152,16 +160,17 @@
     <a class="btn" href="https://t.me/sidiqivich" target="_blank">Telegram</a>
     <a class="btn" href="https://instagram.com/mshakhobiddin_01" target="_blank">Instagram</a>
     <a class="btn" href="https://wa.me/998936010203" target="_blank">WhatsApp</a>
-    <button class="btn" onclick="openModal('modal2_xizmat')">Xizmatlarimizni ko‘rish</button>
+    <button class="btn" onclick="openModal('modal2_xizmat')">Xizmatlarni ko‘rish</button>
     <button class="btn" onclick="openModal('modal2_avto')">Avtosug‘urta va Ishonchnoma narxlari</button>
-    <button class="btn" onclick="openModal('modal2_aksiya')">Aksiyalarimiz</button>
+    <button class="btn" onclick="openModal('modal2_aksiya')">Aksiyalar</button>
+    <button class="btn" onclick="openModal('modal2_karta')">To'lov uchun kartalar</button>
     <p id="workTime" style="font-size: 14px; color: #444; margin-top: 30px;">🕘 Ish vaqti: 09:00 - 21:00</p>
   </div>
 
   <!-- Xizmatlar modal -->
   <div class="modal" id="modal2_xizmat">
     <div class="modal-content">
-      <h3>🔵 Xizmatlar:</h3>
+      <h3 id="xizmatTitle">🔵 Xizmatlar:</h3>
       <ul>
         <li id="xizmat1">⭐STIR, JShShIR, E-imzo va boshqalar</li>
         <li id="xizmat2">⭐Paynet orqali to‘lovlar</li>
@@ -208,6 +217,25 @@
     </div>
   </div>
 
+  <!-- karta model -->
+  <div class="modal" id="modal2_karta">
+    <div class="modal-content">
+      <h3>💳 HUMO</h3>
+      <ul>
+        <h4>9860 1678 3484 6997</h4>
+        <li>📞 Telefon: +998 93 601 0203</li>
+        <li>🏦 Bank: HAMKOR BANK , Shahobiddin Mallayev</li>
+      </ul>
+      <h3>💳 UZCARD </h3>
+      <ul>
+        <h4>8600 0610 7775 6004</h4>
+        <li>📞 Telefon: +998 93 601 0203</li>
+        <li>🏦 Bank: XALQ BANKi , Shapoxat Donisheva</li>
+      </ul>
+      <button class="btn back-btn" id="back3" onclick="closeModal('modal2_karta')">◀️ Orqaga</button>
+    </div>
+  </div>
+
   <!-- Til tanlash -->
   <div class="modal" id="langModal">
     <div class="modal-content">
@@ -225,9 +253,11 @@
       "title": "Shahobiddin Mallayev",
       "short": "UZ",
       "workTime": "🕘 Ish vaqti: 09:00 - 21:00",
-      "xizmat": "Xizmatlarimizni ko‘rish",
+      "xizmat": "Xizmatlarni ko‘rish",
       "avto": "Avtosug‘urta va Ishonchnoma narxlari",
-      "aksiya": "Aksiyalarimiz",
+      "aksiya": "Aksiyalar",
+      "karta": "To'lov uchun kartalar",
+      "xizmatTitle": "🔵 Xizmatlar:",
       "xizmat1": "⭐STIR, JShShIR, E-imzo va boshqalar",
       "xizmat2": "⭐Paynet orqali to‘lovlar",
       "xizmat3": "⭐Kitob chiqarish, rasm, skanerlash",
@@ -247,9 +277,11 @@
       "title": "Шаҳобиддин Маллаев",
       "short": "UZ(kr)",
       "workTime": "🕘 Иш вақти: 09:00 - 21:00",
-      "xizmat": "Хизматларимизни кўриш",
+      "xizmat": "Хизматларни кўриш",
       "avto": "Автосуғурта ва Ишончнома нархлари",
-      "aksiya": "Аксияларимиз",
+      "aksiya": "Аксиялар",
+      "karta": "Тўлов учун карталар",
+      "xizmatTitle": "🔵 Хизматлар:",
       "xizmat1": "⭐СТИР, ЖШШИР, Э-имзо ва бошқалар",
       "xizmat2": "⭐Пайнет орқали тўловлар",
       "xizmat3": "⭐Китоб чиқариш, расм, сканерлаш",
@@ -269,9 +301,11 @@
       "title": "Шахобиддин Маллаев",
       "short": "RU",
       "workTime": "🕘 Время работы: 09:00 - 21:00",
-      "xizmat": "Просмотр наших услуг",
+      "xizmat": "Просмотр услуг",
       "avto": "Цены на автострахование и доверенности",
-      "aksiya": "Наши акции",
+      "aksiya": "Акции",
+      "karta": "Карты для оплаты",
+      "xizmatTitle": "🔵 Услуги:",
       "xizmat1": "⭐ИНН, ПИНФЛ, ЭЦП и другое",
       "xizmat2": "⭐Платежи через Paynet",
       "xizmat3": "⭐Печать книг, фото, сканирование",
@@ -306,8 +340,10 @@
     document.querySelector("button[onclick*='modal2_xizmat']").textContent = t.xizmat;
     document.querySelector("button[onclick*='modal2_avto']").textContent = t.avto;
     document.querySelector("button[onclick*='modal2_aksiya']").textContent = t.aksiya;
+    document.querySelector("button[onclick*='modal2_karta']").textContent = t.karta;
 
     // Xizmatlar ro‘yxati
+    document.getElementById("xizmatTitle").textContent = t.xizmatTitle;
     document.getElementById("xizmat1").textContent = t.xizmat1;
     document.getElementById("xizmat2").textContent = t.xizmat2;
     document.getElementById("xizmat3").textContent = t.xizmat3;
