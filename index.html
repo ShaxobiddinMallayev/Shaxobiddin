@@ -232,6 +232,7 @@
         <li>📞 Telefon: +998 93 601 0203</li>
         <li>🏦 Bank: XALQ BANKi , Shapoxat Donisheva</li>
       </ul>
+      <button class="btn back-btn" onclick="goToPayment()">📲 Click Avto To'lov</button>
       <button class="btn back-btn" id="back3" onclick="closeModal('modal2_karta')">◀️ Orqaga</button>
     </div>
   </div>
@@ -388,6 +389,12 @@
     applyLanguage(lang);
     closeModal('langModal');
   }
+  
+  function goToPayment() {
+    closeModal('modal2_karta');
+    window.open('https://my.click.uz/clickp2p/8EE3C8B83BE4587C8C011DB53EFA2E691B11D9DD8A9E18A1B6D9BDB60E8E6EBC', '_blank');
+  }
+</script>
 </script>
 
 </body>
