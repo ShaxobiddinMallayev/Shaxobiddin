@@ -36,7 +36,8 @@
     }
     h1 {
       font-family: 'Merriweather', serif;
-      font-size: 28px;
+      font-size: 35px;
+      text-align: center;
       color: #2c3e50;
       margin: 0 auto;
     }
@@ -115,6 +116,12 @@
       text-align: center;
       margin-bottom: 10px;
     }
+    .modal h5 {
+      color: #d35400;
+      margin-top: 0;
+      font-size: 20px;
+      text-align: center;
+    }
     .modal ul {
       list-style: none;
       padding-left: 0;
@@ -167,6 +174,17 @@
     <p id="workTime" style="font-size: 14px; color: #444; margin-top: 30px;">🕘 Ish vaqti: 09:00 - 21:00</p>
   </div>
 
+  <!-- Til tanlash -->
+  <div class="modal" id="langModal">
+    <div class="modal-content">
+      <h3>🌐 Tilni tanlang:</h3>
+      <button class="btn" onclick="setLanguage('uz')">🇺🇿 O‘zbekcha</button>
+      <button class="btn" onclick="setLanguage('kr')">🇺🇿 Ўзбекча (KR)</button>
+      <button class="btn" onclick="setLanguage('ru')">🇷🇺 Русский</button>
+      <button class="btn back-btn" id="back1" onclick="closeModal('langModal')">◀️ Orqaga</button>
+    </div>
+  </div>
+
   <!-- Xizmatlar modal -->
   <div class="modal" id="modal2_xizmat">
     <div class="modal-content">
@@ -177,7 +195,7 @@
         <li id="xizmat3">⭐Kitob chiqarish, rasm, skanerlash</li>
         <li id="xizmat4">⭐Aksessuarlar savdosi</li>
       </ul>
-      <button class="btn back-btn" id="back1" onclick="closeModal('modal2_xizmat')">◀️ Orqaga</button>
+      <button class="btn back-btn" id="back2" onclick="closeModal('modal2_xizmat')">◀️ Orqaga</button>
     </div>
   </div>
 
@@ -197,7 +215,7 @@
       <li id="ishonch2">⭐6 oylik – 400 000 so‘m</li>
       <li id="ishonch3">⭐3 yillik – 800 000 so‘m</li>
     </ul>
-    <button class="btn back-btn" id="back2" onclick="closeModal('modal2_avto')">◀️ Orqaga</button>
+    <button class="btn back-btn" id="back3" onclick="closeModal('modal2_avto')">◀️ Orqaga</button>
   </div>
 </div>
 
@@ -213,7 +231,7 @@
         <li>⚠️ Do'stingizga ham ulashing!</li>
         <li>📞 Murojaat: +998 94 993 9399</li>
       </ul>
-      <button class="btn back-btn" id="back3" onclick="closeModal('modal2_aksiya')">◀️ Orqaga</button>
+      <button class="btn back-btn" id="back4" onclick="closeModal('modal2_aksiya')">◀️ Orqaga</button>
     </div>
   </div>
 
@@ -223,17 +241,21 @@
       <h3>💳 HUMO</h3>
       <ul>
         <h4>9860 1678 3484 6997</h4>
-        <li>📞 Telefon: +998 93 601 0203</li>
-        <li>🏦 Bank: HAMKOR BANK , Shahobiddin Mallayev</li>
+        <li id="karta1">📞 Telefon: +998 93 601 0203</li>
+        <li id="karta2">🏦 Bank: HAMKOR BANK , Shahobiddin Mallayev</li>
       </ul>
       <h3>💳 UZCARD </h3>
       <ul>
         <h4>8600 0610 7775 6004</h4>
-        <li>📞 Telefon: +998 93 601 0203</li>
-        <li>🏦 Bank: XALQ BANKi , Shapoxat Donisheva</li>
+        <li id="karta3">📞 Telefon: +998 93 601 0203</li>
+        <li id="karta4">🏦 Bank: XALQ BANKi , Shapoxat Donisheva</li>
       </ul>
-      <button class="btn back-btn" onclick="goToPayment()">📲 Click Avto To'lov</button>
-      <button class="btn back-btn" id="back3" onclick="closeModal('modal2_karta')">◀️ Orqaga</button>
+      <h5 id="avtotulov">⬇️ AVTO TO'LOV ⬇️</h5>
+      <button class="btn back-btn" id="avtokarta" onclick="goToPayment()">
+  <img src="https://click.uz/click/images/logo.svg" 
+       alt="Click logo" 
+       style="height:20px; vertical-align:middle; margin-right:8px;" /></button>
+      <button class="btn back-btn" id="back5" onclick="closeModal('modal2_karta')">◀️ Orqaga</button>
     </div>
   </div>
 
@@ -244,7 +266,7 @@
       <button class="btn" onclick="setLanguage('uz')">🇺🇿 O‘zbekcha</button>
       <button class="btn" onclick="setLanguage('kr')">🇺🇿 Ўзбекча (KR)</button>
       <button class="btn" onclick="setLanguage('ru')">🇷🇺 Русский</button>
-      <button class="btn back-btn" id="back4" onclick="closeModal('langModal')">◀️ Orqaga</button>
+      <button class="btn back-btn" id="back5" onclick="closeModal('langModal')">◀️ Orqaga</button>
     </div>
   </div>
 
@@ -272,6 +294,11 @@
       "ishonch1": "⭐1 oylik – 100 000 so‘m",
       "ishonch2": "⭐6 oylik – 400 000 so‘m",
       "ishonch3": "⭐3 yillik – 800 000 so‘m",
+      "karta1": "📞 Telefon: +998 93 601 0203",
+      "karta2": "🏦 Bank: HAMKOR BANK , Shahobiddin Mallayev",
+      "karta3": "📞 Telefon: +998 93 601 0203",
+      "karta4": "🏦 Bank: XALQ BANKi , Shapoxat Donisheva",
+      "avtotulov": "⬇️ AVTO TO'LOV ⬇️",
       "back": "◀️ Orqaga"
     },
     "kr": {
@@ -296,6 +323,11 @@
       "ishonch1": "⭐1 ойлик – 100 000 сўм",
       "ishonch2": "⭐6 ойлик – 400 000 сўм",
       "ishonch3": "⭐3 йиллик – 800 000 сўм",
+      "karta1": "📞 Телефон: +998 93 601 0203",
+      "karta2": "🏦 Банк: HAMKOR BANK , Шаҳобиддин Маллаев",
+      "karta3": "📞 Телефон: +998 93 601 0203",
+      "karta4": "🏦 Банк: ХАЛҚ БАНКИ , Шапохат Донишева",
+      "avtotulov": "⬇️ АВТО ТЎЛОВ ⬇️",
       "back": "◀️ Орқага"
     },
     "ru": {
@@ -320,6 +352,11 @@
       "ishonch1": "⭐1 месяц – 100 000 сум",
       "ishonch2": "⭐6 месяцев – 400 000 сум",
       "ishonch3": "⭐3 года – 800 000 сум",
+      "karta1": "📞 Телефон: +998 93 601 0203",
+      "karta2": "🏦 Банк: HAMKOR BANK , Шахобиддин Маллаев",
+      "karta3": "📞 Телефон: +998 93 601 0203",
+      "karta4": "🏦 Банк: XALQ BANK , Шапохат Донишева",
+      "avtotulov": "⬇️ АВТО ОПЛАТА ⬇️", 
       "back": "◀️ Назад"
     }
   };
@@ -363,11 +400,20 @@
     document.getElementById("ishonch2").textContent = t.ishonch2;
     document.getElementById("ishonch3").textContent = t.ishonch3;
 
+    // Karta ma'lumotlari
+    document.getElementById("karta1").textContent = t.karta1;
+    document.getElementById("karta2").textContent = t.karta2;
+    document.getElementById("karta3").textContent = t.karta3;
+    document.getElementById("karta4").textContent = t.karta4;
+    document.getElementById("avtotulov").textContent = t.avtotulov;
+
     // Orqaga tugmalari
     document.getElementById("back1").textContent = t.back;
     document.getElementById("back2").textContent = t.back;
     document.getElementById("back3").textContent = t.back;
     document.getElementById("back4").textContent = t.back;
+    document.getElementById("back5").textContent = t.back;
+    
   }
 </script>
 <script>
@@ -395,7 +441,5 @@
     window.open('https://my.click.uz/clickp2p/8EE3C8B83BE4587C8C011DB53EFA2E691B11D9DD8A9E18A1B6D9BDB60E8E6EBC', '_blank');
   }
 </script>
-</script>
-
 </body>
 </html>
