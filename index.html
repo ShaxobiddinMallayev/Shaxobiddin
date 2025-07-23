@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="uz">
 <head>
@@ -53,6 +54,7 @@
       margin: 14px auto;
       padding: 16px 20px;
       font-size: 17px;
+	  text-align: center;
       font-weight: bold;
       border: none;
       border-radius: 999px;
@@ -164,11 +166,8 @@
       </div>
     </div>
     <p>📞 <a href="tel:+998949939399">Telefon: +998 94 993 9399</a></p>
-    <a class="btn" href="https://t.me/sidiqivich" target="_blank">Telegram</a>
-    <a class="btn" href="https://instagram.com/mshakhobiddin_01" target="_blank">Instagram</a>
-    <a class="btn" href="https://wa.me/998936010203" target="_blank">WhatsApp</a>
-    <button class="btn" onclick="openModal('modal2_xizmat')">Xizmatlarni ko‘rish</button>
-    <button class="btn" onclick="openModal('modal2_avto')">Avtosug‘urta va Ishonchnoma narxlari</button>
+    <button class="btn" onclick="openModal('modal2_tarmoq')">Telegram / Instagram / WatsApp</button>
+    <button class="btn" onclick="openModal('modal2_xizmat')">Xizmat va ma'lumotlar</button>
     <button class="btn" onclick="openModal('modal2_aksiya')">Aksiyalar</button>
     <button class="btn" onclick="openModal('modal2_karta')">To'lov uchun kartalar</button>
     <p id="workTime" style="font-size: 14px; color: #444; margin-top: 30px;">🕘 Ish vaqti: 09:00 - 21:00</p>
@@ -177,13 +176,25 @@
   <!-- Til tanlash -->
   <div class="modal" id="langModal">
     <div class="modal-content">
-      <h3>🌐 Tilni tanlang:</h3>
+      <h3 id="til">🌐 Tilni tanlang:</h3>
       <button class="btn" onclick="setLanguage('uz')">🇺🇿 O‘zbekcha</button>
       <button class="btn" onclick="setLanguage('kr')">🇺🇿 Ўзбекча (KR)</button>
       <button class="btn" onclick="setLanguage('ru')">🇷🇺 Русский</button>
       <button class="btn back-btn" id="back1" onclick="closeModal('langModal')">◀️ Orqaga</button>
     </div>
   </div>
+
+  <!-- Tarmoq modal -->
+  <div class="modal" id="modal2_tarmoq">
+    <div class="modal-content">
+      <h5 id="tarmoq">⬇️ Ijtimoiy tarmoqlar ⬇️</h5>
+      <a class="btn" href="https://t.me/sidiqivich" target="_blank">Telegram</a>
+      <a class="btn" href="https://instagram.com/mshakhobiddin_01" target="_blank">Instagram</a>
+      <a class="btn" href="https://wa.me/998936010203" target="_blank">WhatsApp</a>
+      <button class="btn back-btn" id="back2" onclick="closeModal('modal2_tarmoq')">◀️ Orqaga</button>
+    </div>
+  </div>
+
 
   <!-- Xizmatlar modal -->
   <div class="modal" id="modal2_xizmat">
@@ -195,7 +206,8 @@
         <li id="xizmat3">⭐Kitob chiqarish, rasm, skanerlash</li>
         <li id="xizmat4">⭐Aksessuarlar savdosi</li>
       </ul>
-      <button class="btn back-btn" id="back2" onclick="closeModal('modal2_xizmat')">◀️ Orqaga</button>
+      <button class="btn" onclick="openModal('modal2_avto')">Avtosug‘urta va Ishonchnoma narxlari</button>
+      <button class="btn back-btn" id="back3" onclick="closeModal('modal2_xizmat')">◀️ Orqaga</button>
     </div>
   </div>
 
@@ -215,7 +227,7 @@
       <li id="ishonch2">⭐6 oylik – 400 000 so‘m</li>
       <li id="ishonch3">⭐3 yillik – 800 000 so‘m</li>
     </ul>
-    <button class="btn back-btn" id="back3" onclick="closeModal('modal2_avto')">◀️ Orqaga</button>
+    <button class="btn back-btn" id="back4" onclick="closeModal('modal2_avto')">◀️ Orqaga</button>
   </div>
 </div>
 
@@ -231,7 +243,7 @@
         <li>⚠️ Do'stingizga ham ulashing!</li>
         <li>📞 Murojaat: +998 94 993 9399</li>
       </ul>
-      <button class="btn back-btn" id="back4" onclick="closeModal('modal2_aksiya')">◀️ Orqaga</button>
+      <button class="btn back-btn" id="back5" onclick="closeModal('modal2_aksiya')">◀️ Orqaga</button>
     </div>
   </div>
 
@@ -255,7 +267,7 @@
   <img src="https://click.uz/click/images/logo.svg" 
        alt="Click logo" 
        style="height:20px; vertical-align:middle; margin-right:8px;" /></button>
-      <button class="btn back-btn" id="back5" onclick="closeModal('modal2_karta')">◀️ Orqaga</button>
+      <button class="btn back-btn" id="back6" onclick="closeModal('modal2_karta')">◀️ Orqaga</button>
     </div>
   </div>
 
@@ -274,9 +286,11 @@
   const texts = {
     "uz": {
       "title": "Shahobiddin Mallayev",
+      "til": "Tilni tanlang:",
       "short": "UZ",
       "workTime": "🕘 Ish vaqti: 09:00 - 21:00",
-      "xizmat": "Xizmatlarni ko‘rish",
+      "tarmoq": "⬇️ Ijtimoiy tarmoqlar ⬇️",
+      "xizmat": "Xizmat va ma'lumotlar",
       "avto": "Avtosug‘urta va Ishonchnoma narxlari",
       "aksiya": "Aksiyalar",
       "karta": "To'lov uchun kartalar",
@@ -304,8 +318,10 @@
     "kr": {
       "title": "Шаҳобиддин Маллаев",
       "short": "UZ(kr)",
+      "til": "Тилни танланг:",
       "workTime": "🕘 Иш вақти: 09:00 - 21:00",
-      "xizmat": "Хизматларни кўриш",
+      "tarmoq": "⬇️ Ижтимоий тармоқлар ⬇️",
+      "xizmat": "Хизмат ва маълумотлар",
       "avto": "Автосуғурта ва Ишончнома нархлари",
       "aksiya": "Аксиялар",
       "karta": "Тўлов учун карталар",
@@ -331,10 +347,12 @@
       "back": "◀️ Орқага"
     },
     "ru": {
-      "title": "Шахобиддин Маллаев",
+      "title": "Выберите язык:",
       "short": "RU",
+      "til": "Выберите язык:",
       "workTime": "🕘 Время работы: 09:00 - 21:00",
-      "xizmat": "Просмотр услуг",
+      "tarmoq": "⬇️ Социальные сети ⬇️",
+      "xizmat": "Сервис и данные",
       "avto": "Цены на автострахование и доверенности",
       "aksiya": "Акции",
       "karta": "Карты для оплаты",
@@ -367,12 +385,16 @@
 
     // Sarlavha
     document.querySelector("h1").textContent = t.title;
+    document.getElementById("til").textContent = t.til;
 
     // Til qisqartmasi
     document.getElementById("currentLang").textContent = t.short;
 
     // Ish vaqti
     document.getElementById("workTime").textContent = t.workTime;
+
+    // tarmoq
+    document.getElementById("tarmoq").textContent = t.xizmat1;
 
     // Tugmalar (xizmatlar, avto, aksiya)
     document.querySelector("button[onclick*='modal2_xizmat']").textContent = t.xizmat;
@@ -413,7 +435,7 @@
     document.getElementById("back3").textContent = t.back;
     document.getElementById("back4").textContent = t.back;
     document.getElementById("back5").textContent = t.back;
-    
+    document.getElementById("back6").textContent = t.back;
   }
 </script>
 <script>
