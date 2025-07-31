@@ -53,7 +53,7 @@
       margin: 14px auto;
       padding: 16px 20px;
       font-size: 17px;
-	  text-align: center;
+      text-align: center;
       font-weight: bold;
       border: none;
       border-radius: 999px;
@@ -70,6 +70,34 @@
       box-shadow: 0 8px 18px rgba(255, 200, 0, 0.6);
     }
     .btn:active {
+      animation: shake 0.3s;
+      transform: scale(0.98);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+    .btn1 {
+      display: block;
+      width: 90%;
+      max-width: 400px;
+      margin: 14px auto;
+      padding: 16px 20px;
+      font-size: 17px;
+      text-align: center;
+      font-weight: bold;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(to right, #3498db, #2980b9);
+      color: #ffffff;
+      box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+      transition: transform 0.25s ease, background 0.3s ease;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    }
+    .btn1:hover {
+      cursor: pointer;
+      transform: scale(1.06);
+      background: linear-gradient(to right, #5dade2, #2471a3);
+      box-shadow: 0 8px 18px rgba(41, 128, 185, 0.6);
+    }
+    .btn1:active {
       animation: shake 0.3s;
       transform: scale(0.98);
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
@@ -183,7 +211,7 @@
     <button class="btn" onclick="openModal('modal2_xizmat')">Xizmat va ma'lumotlar</button>
     <button class="btn" onclick="openModal('modal2_aksiya')">Aksiyalar</button>
     <button class="btn" onclick="openModal('modal2_karta')">To'lov uchun kartalar</button>
-    <button class="btn" onclick="openModal('modal2_soqqa')">PUBG UC</button>
+    <button class="btn1" onclick="openModal('modal2_soqqa')">PUBG UC</button>
     <p id="workTime" style="font-size: 14px; color: #444; margin-top: 30px;">🕘 Ish vaqti: 09:00 - 21:00</p>
   </div>
 
