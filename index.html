@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Shaxsiy Blog - Ish vaqti</title>
+  <title>Shaxsiy Blog - Shaxobiddin</title>
   <style>
     /* ====== Ranglar ====== */
     :root {
@@ -378,6 +378,37 @@ main {
   color: #00ffcc;
 }
 
+/* ====== Modal oynalar ====== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.modal-content {
+  background: var(--paper);
+  color: var(--black);
+  margin: 10% auto;
+  padding: 20px;
+  border-radius: 15px;
+  max-width: 500px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  text-align: left;
+}
+
+.close {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--gold);
+}
+.close:hover { color: var(--gold-deep); }
 
 
     /* ====== Responsive ====== */
@@ -411,7 +442,7 @@ main {
   <div class="sidebar" id="sidebar">
   <a href="javascript:void(0)" onclick="scrollToServices(); toggleSidebar()">Xizmatlar</a>
   <a href="javascript:void(0)" onclick="scrollToPromo(); toggleSidebar()">Aksiya</a>
-  <a href="https://maps.app.goo.gl/6SxHHhmH9QmdXWkj7" target="_blank">Manzilimiz 📍</a>
+  <a href="https://maps.app.goo.gl/6SxHHhmH9QmdXWkj7" target="_blank">📍 Manzilimiz</a>
   <button class="back-btn" onclick="toggleSidebar()">⬅ Orqaga</button>
 </div>
 
@@ -423,9 +454,8 @@ main {
     <a href="https://wa.me/998901234567" target="_blank"><button class="btn whatsapp">WhatsApp</button></a>
   </div>
   <button class="btn1" onclick="scrollToServices()">Avtosug‘urta va Ishonchnoma narxlari</button>
-  <button class="btn1" onclick="scrollToServices()">PUBG UC</button>
-  <button class="btn1" onclick="scrollToServices()">KARALAR</button>
-
+  <button class="btn1" onclick="openModal('pubg')">PUBG UC</button>
+  <button class="btn1" onclick="openModal('karalar')">KARTALAR</button>
   <main>
 <!-- Ish vaqti jadvali -->
     <div class="sheet">
@@ -568,6 +598,23 @@ main {
   <div class="contact">📞 Murojaat: +998 94 993 9399</div>
 </div>
 
+<!-- PUBG UC Modal -->
+<div id="pubg" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('pubg')">&times;</span>
+    <h2>PUBG UC</h2>
+    <p>Bu yerga PUBG UC narxlari yoki ma’lumot qo‘yiladi.Tamirlanmoqda</p>
+  </div>
+</div>
+
+<!-- Karalar Modal -->
+<div id="karalar" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('karalar')">&times;</span>
+    <h2>KARALAR</h2>
+    <p>Bu yerga to'lov uchun KARALAR  qo‘yiladi.Tamirlanmoqda</p>
+  </div>
+</div>
 
   <script>
     // Sidebar ochish-yopish
@@ -599,6 +646,22 @@ function scrollToHome() {
     top: 0, 
     behavior: "smooth" 
   });
+}
+</script>
+<script>
+function openModal(id) {
+  document.getElementById(id).style.display = 'block';
+}
+
+function closeModal(id) {
+  document.getElementById(id).style.display = 'none';
+}
+
+// Tashqarini bosganda yopish
+window.onclick = function(event) {
+  if(event.target.classList.contains('modal')) {
+    event.target.style.display = "none";
+  }
 }
 </script>
 
