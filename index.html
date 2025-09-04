@@ -431,11 +431,34 @@ main {
     }
 
 
+.autopay-btn {
+  display: block;
+  margin: 20px auto;   /* markazga chiqaradi */
+  padding: 12px 20px;
+  background: linear-gradient(to right, #25aae1, #40e495);
+  border: none;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.25s ease, background 0.3s ease;
+}
+.autopay-btn:hover {
+  transform: scale(1.06);
+  background: linear-gradient(to right, #40e495, #30dd8a);
+}
+
+
     /* ====== Responsive ====== */
-    @media(max-width: 768px) {
-      nav ul { display: none; }
-      .hamburger { display: flex; }
-    }
+nav ul {
+  display: none;
+}
+
+.hamburger {
+  display: flex;
+}
   </style>
 </head>
 <body>
@@ -443,15 +466,6 @@ main {
     <div class="logo" onclick="scrollToHome()" style="cursor:pointer;">
   Shaxsiy Blog | Bosh Sahifa
 </div>
-
-<nav>
-  <ul>
-    <li><a href="#" onclick="scrollToHome()">Bosh sahifa</a></li>
-    <li><a href="javascript:void(0)" onclick="scrollToServices()">Xizmatlar</a></li>
-    <li><a href="javascript:void(0)" onclick="scrollToPromo()">Aksiya</a></li>
-  </ul>
-</nav>
-
     <!-- faqat bitta hamburger -->
     <div class="hamburger" onclick="toggleSidebar()">
       <span></span><span></span><span></span>
@@ -460,8 +474,11 @@ main {
 
   <!-- Sidebar menyu -->
   <div class="sidebar" id="sidebar">
-  <a href="javascript:void(0)" onclick="scrollToServices(); toggleSidebar()">Xizmatlar</a>
-  <a href="javascript:void(0)" onclick="scrollToPromo(); toggleSidebar()">Aksiya</a>
+  <a href="#" onclick="scrollToHome()">🏘️ Bosh sahifa</a>
+  <a href="javascript:void(0)" onclick="scrollToServices(); toggleSidebar()">📋 Xizmatlar</a>
+  <a href="javascript:void(0)" onclick="scrollToPromo(); toggleSidebar()">🎉 Aksiya</a>
+  <a href="javascript:void(0)" onclick="scrollToServices(); toggleSidebar()">🚗 AvtoSug‘urta Rasmiylashtirish</a>
+  <a href="javascript:void(0)" onclick="scrollToServices(); toggleSidebar()">📄 Ishonchnoma Rasmiylashtirish</a>
   <a href="https://maps.app.goo.gl/6SxHHhmH9QmdXWkj7" target="_blank">📍 Manzilimiz</a>
   <button class="back-btn" onclick="toggleSidebar()">⬅ Orqaga</button>
 </div>
@@ -469,11 +486,11 @@ main {
 
   <!-- Kontent shu yerdan davom etadi... -->
   <div class="socials">
-    <a href="https://t.me/username" target="_blank"><button class="btn telegram">Telegram</button></a>
-    <a href="https://instagram.com/username" target="_blank"><button class="btn instagram">Instagram</button></a>
-    <a href="https://wa.me/998901234567" target="_blank"><button class="btn whatsapp">WhatsApp</button></a>
+    <a href="https://t.me/sidiqivich" target="_blank"><button class="btn telegram">Telegram</button></a>
+    <a href="https://instagram.com/sidiqivich" target="_blank"><button class="btn instagram">Instagram</button></a>
+    <a href="https://wa.me/998936010203" target="_blank"><button class="btn whatsapp">WhatsApp</button></a>
   </div>
-  <button class="btn1" onclick="scrollToServices()">Avtosug‘urta va Ishonchnoma narxlari</button>
+  <button class="btn1" onclick="scrollToServices()">Avtosug‘urta va Ishonchnoma Rasmiylashtirish</button>
   <button class="btn1" onclick="openModal('pubg')">PUBG UC</button>
   <button class="btn1" onclick="openModal('kartalar')">KARTALAR</button>
   <main>
@@ -587,6 +604,7 @@ main {
       <p><li>⭐6 oylik – 28 000 so‘m</li></p>
       <p><li>⭐1 yillik – 40 000 so‘m</li></p>
       <p><li>⭐UNVERSAL – 120 000 so‘m</li></p>
+      <a href="https://t.me/sidiqivich" target="_blank"><button class="btn telegram">Rasmiylashtirish</button></a>
     </div>
 
     <div class="service-card">
@@ -594,14 +612,16 @@ main {
       <p><li>⭐1 oylik – 100 000 so‘m</li></p>
       <p><li>⭐6 oylik – 450 000 so‘m</li></p>
       <p><li>⭐3 yillik – 850 000 so‘m</li></p>
+      <p><li>⭐General... – ------</li></p>
+      <a href="https://t.me/sidiqivich" target="_blank"><button class="btn telegram">Rasmiylashtirish</button></a>
     </div>
 
     <div class="service-card">
       <h2>Xizmatlar</h2>
-      <p><li id="xizmat1">⭐STIR, JShShIR, E-imzo va boshqalar</li></p>
-      <p><li id="xizmat2">⭐Paynet orqali to‘lovlar</li></p>
-      <p><li id="xizmat3">⭐Kitob chiqarish, rasm, skanerlash</li></p>
-      <p><li id="xizmat4">⭐Aksessuarlar savdosi</li></p>
+      <p><li>⭐STIR, JShShIR, E-imzo va boshqalar</li></p>
+      <p><li>⭐Paynet orqali to‘lovlar</li></p>
+      <p><li>⭐Kitob chiqarish, rasm, skanerlash</li></p>
+      <p><li>⭐Aksessuarlar savdosi</li></p>
     </div>
   </div>
 </div>
@@ -643,12 +663,11 @@ main {
         <li>📞 Telefon: +998 93 601 0203</li>
         <li>🏦 Bank: XALQ BANKi , Shapoxat Donisheva</li>
       </ul>
-      <h5>⬇️ AVTO TO'LOV ⬇️</h5>
-      <button class="btn back-btn" id="avtokarta" onclick="goToPayment()">
-  <img src="https://click.uz/click/images/logo.svg" 
-       alt="Click logo" 
-       style="height:20px; vertical-align:middle; margin-right:8px;" /></button>
-
+<h5>⬇️ AVTO TO'LOV ⬇️</h5>
+<button class="autopay-btn" id="avtokarta" onclick="window.open('https://my.click.uz/clickp2p/8EE3C8B83BE4587C8C011DB53EFA2E691B11D9DD8A9E18A1B6D9BDB60E8E6EBC', '_blank')">
+  <img src="https://click.uz/click/images/logo.svg" style="height:20px; vertical-align:middle; margin-right:8px;" alt="Click logo" />
+  Avto to‘lov
+</button>
   </div>
 </div>
 
