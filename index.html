@@ -85,6 +85,7 @@
       display: flex;
       flex-direction: column;
       gap: 15px;
+      pointer-events: auto;
     }
 
     .sidebar a {
@@ -473,15 +474,16 @@ nav ul {
   </header>
 
   <!-- Sidebar menyu -->
-  <div class="sidebar" id="sidebar">
-  <a href="#" onclick="scrollToHome()">🏘️ Bosh sahifa</a>
+<div class="sidebar" id="sidebar">
+  <a href="#" onclick="scrollToHome(); toggleSidebar()">🏘️ Bosh sahifa</a>
   <a href="javascript:void(0)" onclick="scrollToServices(); toggleSidebar()">📋 Xizmatlar</a>
   <a href="javascript:void(0)" onclick="scrollToPromo(); toggleSidebar()">🎉 Aksiya</a>
-  <a href="javascript:void(0)" onclick="scrollToServices(); toggleSidebar()">🚗 AvtoSug‘urta Rasmiylashtirish</a>
-  <a href="javascript:void(0)" onclick="scrollToServices(); toggleSidebar()">📄 Ishonchnoma Rasmiylashtirish</a>
+  <a href="javascript:void(0)" onclick="scrollToAutosugurta(); toggleSidebar()">🚗 AvtoSug‘urta Rasmiylashtirish</a>
+  <a href="javascript:void(0)" onclick="scrollToIshonchnoma(); toggleSidebar()">📄 Ishonchnoma Rasmiylashtirish</a>
   <a href="https://maps.app.goo.gl/6SxHHhmH9QmdXWkj7" target="_blank">📍 Manzilimiz</a>
   <button class="back-btn" onclick="toggleSidebar()">⬅ Orqaga</button>
 </div>
+
 
 
   <!-- Kontent shu yerdan davom etadi... -->
@@ -598,7 +600,7 @@ nav ul {
   </div>
 
   <div class="services-grid" id="services">
-    <div class="service-card">
+    <div class="service-card"  id="autosugurta">
       <h2>Avtosug‘urta Narxlari</h2>
       <p><li>⭐1 oylik – 8 000 so‘m</li></p>
       <p><li>⭐6 oylik – 28 000 so‘m</li></p>
@@ -607,7 +609,7 @@ nav ul {
       <a href="https://t.me/sidiqivich" target="_blank"><button class="btn telegram">Rasmiylashtirish</button></a>
     </div>
 
-    <div class="service-card">
+    <div class="service-card"  id="ishonchnoma">
       <h2>Ishonchnoma Narxlari</h2>
       <p><li>⭐1 oylik – 100 000 so‘m</li></p>
       <p><li>⭐6 oylik – 450 000 so‘m</li></p>
@@ -616,7 +618,7 @@ nav ul {
       <a href="https://t.me/sidiqivich" target="_blank"><button class="btn telegram">Rasmiylashtirish</button></a>
     </div>
 
-    <div class="service-card">
+    <div class="service-card" id="xizmat">
       <h2>Xizmatlar</h2>
       <p><li>⭐STIR, JShShIR, E-imzo va boshqalar</li></p>
       <p><li>⭐Paynet orqali to‘lovlar</li></p>
@@ -717,6 +719,28 @@ window.onclick = function(event) {
   if(event.target.classList.contains('modal')) {
     event.target.style.display = "none";
   }
+}
+</script>
+
+<script>
+function scrollToServices() {
+  document.getElementById("services").scrollIntoView({ behavior: "smooth" });
+}
+
+function scrollToPromo() {
+  document.getElementById("promo").scrollIntoView({ behavior: "smooth" });
+}
+
+function scrollToHome() {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function scrollToAutosugurta() {
+  document.getElementById("autosugurta").scrollIntoView({ behavior: "smooth" });
+}
+
+function scrollToIshonchnoma() {
+  document.getElementById("ishonchnoma").scrollIntoView({ behavior: "smooth" });
 }
 </script>
 
