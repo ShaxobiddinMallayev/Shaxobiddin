@@ -410,6 +410,26 @@ main {
 }
 .close:hover { color: var(--gold-deep); }
 
+    .modal h3 {
+      color: #d35400;
+      margin-top: 0;
+      font-size: 20px;
+    }
+    .modal h4 {
+      color: black;
+      font-weight: bold;
+      margin-top: 0;
+      font-size: 20px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    .modal h5 {
+      color: #d35400;
+      margin-top: 0;
+      font-size: 20px;
+      text-align: center;
+    }
+
 
     /* ====== Responsive ====== */
     @media(max-width: 768px) {
@@ -455,7 +475,7 @@ main {
   </div>
   <button class="btn1" onclick="scrollToServices()">Avtosug‘urta va Ishonchnoma narxlari</button>
   <button class="btn1" onclick="openModal('pubg')">PUBG UC</button>
-  <button class="btn1" onclick="openModal('karalar')">KARTALAR</button>
+  <button class="btn1" onclick="openModal('kartalar')">KARTALAR</button>
   <main>
 <!-- Ish vaqti jadvali -->
     <div class="sheet">
@@ -608,11 +628,27 @@ main {
 </div>
 
 <!-- Karalar Modal -->
-<div id="karalar" class="modal">
+<div id="kartalar" class="modal">
   <div class="modal-content">
-    <span class="close" onclick="closeModal('karalar')">&times;</span>
-    <h2>KARALAR</h2>
-    <p>Bu yerga to'lov uchun KARALAR  qo‘yiladi.Tamirlanmoqda</p>
+    <span class="close" onclick="closeModal('kartalar')">&times;</span>
+      <h3>💳 HUMO</h3>
+      <ul>
+        <h4>9860 1678 3484 6997</h4>
+        <li>📞 Telefon: +998 93 601 0203</li>
+        <li>🏦 Bank: HAMKOR BANK , Shahobiddin Mallayev</li>
+      </ul>
+      <h3>💳 UZCARD </h3>
+      <ul>
+        <h4>8600 0610 7775 6004</h4>
+        <li>📞 Telefon: +998 93 601 0203</li>
+        <li>🏦 Bank: XALQ BANKi , Shapoxat Donisheva</li>
+      </ul>
+      <h5>⬇️ AVTO TO'LOV ⬇️</h5>
+      <button class="btn back-btn" id="avtokarta" onclick="goToPayment()">
+  <img src="https://click.uz/click/images/logo.svg" 
+       alt="Click logo" 
+       style="height:20px; vertical-align:middle; margin-right:8px;" /></button>
+
   </div>
 </div>
 
