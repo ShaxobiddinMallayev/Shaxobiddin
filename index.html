@@ -451,6 +451,77 @@ main {
   background: linear-gradient(to right, #40e495, #30dd8a);
 }
 
+/* Modal oynaning ichki qismi */
+.modal-content {
+  background: #fff;
+  border-radius: 16px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  max-width: 400px;
+  margin: auto;
+  font-family: Arial, sans-serif;
+  position: relative;
+}
+
+/* Yopish tugmasi (×) */
+.close {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.close:hover {
+  color: var(--gold);
+  transform: scale(1.2);
+}
+
+/* Sarlavha */
+.modal-content h2 {
+  margin-bottom: 12px;
+  color: var(--black);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Matn */
+.modal-content p {
+  color: #555;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+/* Tugma umumiy */
+.btn2 {
+  display: inline-block;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #fff;
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
+/* Instagram rangli tugma */
+.instagram2 {
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af, #515bd4);
+}
+
+/* Hover effekti */
+.btn2:hover {
+  transform: scale(1.07);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  opacity: 0.95;
+}
+
 
     /* ====== Responsive ====== */
 nav ul {
@@ -644,10 +715,15 @@ nav ul {
 <div id="pubg" class="modal">
   <div class="modal-content">
     <span class="close" onclick="closeModal('pubg')">&times;</span>
-    <h2>PUBG UC</h2>
-    <p>Bu yerga PUBG UC narxlari yoki ma’lumot qo‘yiladi.Tamirlanmoqda</p>
+    <h2>PUBG uchun UC xarid qilish</h2>
+    <p>Narxlar tez-tez o'zgargani bois admin orqali bilib olishingiz mumkun ⬇️</p>
+
+    <a href="https://t.me/zayniddinphp" target="_blank">
+      <button class="btn2 instagram2">PUBG UC xarid qilish</button>
+    </a>
   </div>
 </div>
+
 
 <!-- Karalar Modal -->
 <div id="kartalar" class="modal">
