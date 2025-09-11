@@ -529,6 +529,49 @@ main {
   opacity: 0.95;
 }
 
+     /* PUBG tugmasi — noodatiy neon gradient */
+#pubgBtn {
+  background: linear-gradient(135deg, #ff6ec4, #7873f5, #42e695);
+  background-size: 300% 300%;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(120,115,245,0.25);
+  animation: gradientMove 6s ease infinite;
+  transition: transform 0.2s;
+}
+
+#pubgBtn:hover {
+  transform: scale(1.08);
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+     /* Kartalar tugma - noodatiy dizayn */
+#kartaBtn {
+  background: linear-gradient(135deg, #ffcf33, #c471ed, #12c2e9);
+  background-size: 300% 300%;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(120,115,245,0.25);
+  animation: gradientMove 6s ease infinite;
+  transition: transform 0.2s;
+}
+
+#kartaBtn:hover {
+  transform: scale(1.08);
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 
     /* ====== Responsive ====== */
 nav ul {
@@ -570,15 +613,18 @@ nav ul {
 
 
 
-     <!-- Kontent shu yerdan davom etadi... -->
+     <!-- Kontent shu yerdan davom etadi... | Bosh Sahifa Tugmalari -->
 <div class="socials">
     <a href="https://t.me/sidiqivich" target="_blank"><button class="btn telegram">Telegram</button></a>
     <a href="https://instagram.com/sidiqivich" target="_blank"><button class="btn instagram">Instagram</button></a>
     <a href="https://wa.me/998936010203" target="_blank"><button class="btn whatsapp">WhatsApp</button></a>
 </div>
     <button class="btn1" onclick="scrollToServices()">Avtosug‘urta va Ishonchnoma Rasmiylashtirish</button>
-    <button class="btn1" onclick="openModal('pubg')">PUBG UC</button>
-    <button class="btn1" onclick="openModal('kartalar')">KARTALAR</button>
+    <button id="pubgBtn" class="btn1" 
+ onclick="window.open('https://t.me/uc_vaultphp', '_blank')">
+  PUBG UC xarid qilish
+</button>
+    <button id="kartaBtn" class="btn1" onclick="openModal('kartalar')">KARTALAR</button>
     <button class="btn1" onclick="openModal('kitob')">Kitob chiqarish uchun</button>
 <main>
      <!-- Ish vaqti jadvali -->
@@ -615,10 +661,9 @@ nav ul {
 </div>
 </main>
 
-  <div class="services">
+<div class="services">
 <div class="services-header">
 </div>
-
      <!-- AvtoSugurta -->
 
 <div class="services-grid" id="services">
@@ -677,93 +722,6 @@ nav ul {
     <li>⚠️ Do‘stingizga ham ulashing!</li>
   </ul>
   <div class="contact">📞 Murojaat: +998 94 993 9399</div>
-</div>
-
-     <!-- PUBG UC Modal -->
-<div id="pubg" class="modal">
-<div class="modal-content">
-<span class="close" onclick="closeModal('pubg')">&times;</span>
-        <h1>PlayerUnknown's Battlegrounds uchun Uc xarid qiling</h1>
-
-     <!-- PUBG | Luks tarif + tezkor -->
-
-              <section class="card">
-              <h2>👑 Luks tarif + tezkor</h2>
-              <table class="hours">
-              <thead><tr><th>UC</th><th>NARX (UZS)</th></tr></thead>
-              <tbody>
-              <tr><td>30 Uc💰</td><td>7 000 UZS💵</td></tr>
-              <tr><td>60 Uc💰</td><td>13 000 UZS💵</td></tr>
-              <tr><td>120 Uc💰</td><td>25 000 UZS💵</td></tr>
-              <tr><td>180 Uc💰</td><td>37 000 UZS💵</td></tr>
-              <tr><td>240 Uc💰</td><td>48 000 UZS💵</td></tr>
-              <tr><td>325 Uc💰</td><td>60 000 UZS💵</td></tr>
-              <tr><td>... Uc💰</td><td>... UZS💵</td></tr>
-              </tbody>
-              </table>
-              <p class="note">Eslatma narxlar USD kursiga ko'ra tez-tez o'zgarishi mumkin</p>
-              <a href="https://t.me/zayniddinphp" target="_blank">
-      <button class="btn2 instagram2">PUBG UC xarid qilish</button></a>
-              </section>
-
-    <!-- PUBG | Tezkor tarif -->
-
-              <section class="card">
-              <h2>⚡ Tezkor tarif</h2>
-              <table class="hours">
-              <thead><tr><th>UC</th><th>NARX (UZS)</th></tr></thead>
-              <tbody>
-              <tr><td>60 Uc💰</td><td>14 000 UZS💵</td></tr>
-              <tr><td>120 Uc💰</td><td>27 000 UZS💵</td></tr>
-              <tr><td>180 Uc💰</td><td>40 000 UZS💵</td></tr>
-              <tr><td>325 Uc💰</td><td>66 000 UZS💵</td></tr>
-              <tr><td>660 Uc💰</td><td>133 000 UZS💵</td></tr>
-              <tr><td>1800 Uc💰</td><td>330 000 UZS💵</td></tr>
-              <tr><td>3850 Uc💰</td><td>658 000 UZS💵</td></tr>
-              <tr><td>7200 Uc💰</td><td>1 300 000 UZS💵</td></tr>
-              <tr><td>... Uc💰</td><td>... UZS💵</td></tr>
-              </tbody>
-              </table>
-              <p class="note">Eslatma narxlar USD kursiga ko'ra tez-tez o'zgarishi mumkin</p>
-              <a href="https://t.me/zayniddinphp" target="_blank">
-      <button class="btn2 instagram2">PUBG UC xarid qilish</button></a>
-              </section>
-
-     <!-- PUBG | Hamyonbop tarif -->
-
-              <section class="card">
-              <h2>👜 Hamyonbop tarif</h2>
-              <table class="hours">
-              <thead><tr><th>UC</th><th>NARX (UZS)</th></tr></thead>
-              <tbody>
-              <tr><td>30 Uc💰</td><td>7 500 UZS💵</td></tr>
-              <tr><td>60 Uc💰</td><td>12 000 UZS💵</td></tr>
-              <tr><td>120 Uc💰</td><td>24 000 UZS💵</td></tr>
-              <tr><td>180 Uc💰</td><td>36 000 UZS💵</td></tr>
-              <tr><td>325 Uc💰</td><td>60 000 UZS💵</td></tr>
-              <tr><td>385 Uc💰</td><td>71 000 UZS💵</td></tr>
-              <tr><td>415 Uc💰</td><td>78 000 UZS💵</td></tr>
-              <tr><td>535 Uc💰</td><td>100 000 UZS💵</td></tr>
-              <tr><td>660 Uc💰</td><td>115 000 UZS💵</td></tr>
-              <tr><td>840 Uc💰</td><td>148 000 UZS💵</td></tr>
-              <tr><td>985 Uc💰</td><td>171 000 UZS💵</td></tr>
-              <tr><td>1320 Uc💰</td><td>225 000 UZS💵</td></tr>
-              <tr><td>1500 Uc💰</td><td>260 000 UZS💵</td></tr>
-              <tr><td>1800 Uc💰</td><td>285 000 UZS💵</td></tr>
-              <tr><td>... Uc💰</td><td>... UZS💵</td></tr>
-              </tbody>
-              </table>
-              <p class="note">Eslatma narxlar USD kursiga ko'ra tez-tez o'zgarishi mumkin</p>
-              <a href="https://t.me/zayniddinphp" target="_blank">
-      <button class="btn2 instagram2">PUBG UC xarid qilish</button></a>
-              </section>
-    <h2>PUBG uchun UC xarid qilish</h2>
-    <p>Narxlar tez-tez o'zgargani bois admin orqali bilib olishingiz mumkun ⬇️</p>
-
-    <a href="https://t.me/zayniddinphp" target="_blank">
-      <button class="btn2 instagram2">PUBG UC xarid qilish</button>
-    </a>
-  </div>
 </div>
 
      <!-- Kitob Modal -->
