@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shaxsiy Blog - Shaxobiddin</title>
   <style>
-    /* ====== Ranglar ====== */
+     /* ====== Ranglar ====== */
     :root {
       --gold: #C7A74A;
       --gold-deep: #B08A20;
@@ -21,7 +21,7 @@
       color: white;
     }
 
-    /* ====== Navbar ====== */
+     /* ====== Navbar ====== */
     header {
       background: var(--black);
       padding: 12px 20px;
@@ -540,18 +540,24 @@ nav ul {
 }
   </style>
 </head>
-<body>
-  <header>
-    <div class="logo" onclick="scrollToHome()" style="cursor:pointer;">
-  Shaxsiy Blog | Bosh Sahifa
-</div>
-    <!-- faqat bitta hamburger -->
-    <div class="hamburger" onclick="toggleSidebar()">
-      <span></span><span></span><span></span>
-    </div>
-  </header>
 
-  <!-- Sidebar menyu -->
+                   <!---------- HTML model body header | Butun yozuv modeli -------->
+
+<body>
+<header>
+     <!-- Shaxsiy Blog| Bosh Sahifa -->
+
+<div class="logo" onclick="scrollToHome()" style="cursor:pointer;">Shaxsiy Blog | Bosh Sahifa</div>
+
+     <!-- Hamburg Bosh Menu -->
+
+<div class="hamburger" onclick="toggleSidebar()">
+<span></span><span></span><span></span>
+</div>
+</header>
+
+     <!-- Sidebar menyu | Bosh Sahifa Tugmalar -->
+
 <div class="sidebar" id="sidebar">
   <a href="#" onclick="scrollToHome(); toggleSidebar()">🏘️ Bosh sahifa</a>
   <a href="javascript:void(0)" onclick="scrollToServices(); toggleSidebar()">📋 Xizmatlar</a>
@@ -564,28 +570,27 @@ nav ul {
 
 
 
-  <!-- Kontent shu yerdan davom etadi... -->
-  <div class="socials">
+     <!-- Kontent shu yerdan davom etadi... -->
+<div class="socials">
     <a href="https://t.me/sidiqivich" target="_blank"><button class="btn telegram">Telegram</button></a>
     <a href="https://instagram.com/sidiqivich" target="_blank"><button class="btn instagram">Instagram</button></a>
     <a href="https://wa.me/998936010203" target="_blank"><button class="btn whatsapp">WhatsApp</button></a>
-  </div>
-  <button class="btn1" onclick="scrollToServices()">Avtosug‘urta va Ishonchnoma Rasmiylashtirish</button>
-  <button class="btn1" onclick="openModal('pubg')">PUBG UC</button>
-  <button class="btn1" onclick="openModal('kartalar')">KARTALAR</button>
-  <button class="btn1" onclick="openModal('kitob')">Kitob chiqarish uchun</button>
-  <main>
-<!-- Ish vaqti jadvali -->
-    <div class="sheet">
-      <div class="header">
-        <div class="brand">
-          <h1>Ish vaqti</h1>
-          <small>Rasmiy jadval</small>
-        </div>
+</div>
+    <button class="btn1" onclick="scrollToServices()">Avtosug‘urta va Ishonchnoma Rasmiylashtirish</button>
+    <button class="btn1" onclick="openModal('pubg')">PUBG UC</button>
+    <button class="btn1" onclick="openModal('kartalar')">KARTALAR</button>
+    <button class="btn1" onclick="openModal('kitob')">Kitob chiqarish uchun</button>
+<main>
+     <!-- Ish vaqti jadvali -->
+<div class="sheet">
+<div class="header">
+<div class="brand">
+   <h1>Ish vaqti</h1>
+   <small>Rasmiy jadval</small>
+      </div>
       </div>
       <hr class="divider" />
       <div class="content">
-<!-- Ish vaqti -->
         <section class="card">
           <h2>Dushanba</h2>
           <table class="hours">
@@ -603,40 +608,45 @@ nav ul {
           <p class="note">Tushlik: 13:00–14:00</p>
         </section>
       </div>
-      <div class="footer">
-        <div>Rasmiy jadval</div>
-        <div>Yangilandi: 29.08.2025</div>
-      </div>
-    </div>
-  </main>
+     <div class="footer">
+     <div>Rasmiy jadval</div>
+     <div>Yangilandi: 29.08.2025</div>
+</div>
+</div>
+</main>
 
-<!-- Xizmatlar bo‘limi -->
-<div class="services">
-  <div class="services-header">
-    <h1>Xizmatlar</h1>
-    <p>Bizning asosiy xizmatlarimiz</p>
-  </div>
+     <!-- AvtoSugurta -->
 
-  <div class="services-grid" id="services">
-    <div class="service-card"  id="autosugurta">
+<div class="services-grid" id="services">
+<div class="service-card"  id="autosugurta">
       <h2>Avtosug‘urta Narxlari</h2>
       <p><li>⭐1 oylik – 8 000 so‘m</li></p>
       <p><li>⭐6 oylik – 28 000 so‘m</li></p>
       <p><li>⭐1 yillik – 40 000 so‘m</li></p>
       <p><li>⭐UNVERSAL – 120 000 so‘m</li></p>
       <a href="https://t.me/sidiqivich" target="_blank"><button class="btn telegram">Rasmiylashtirish</button></a>
-    </div>
+</div>
 
-    <div class="service-card"  id="ishonchnoma">
+     <!-- Ishonchnoma -->
+
+<div class="service-card"  id="ishonchnoma">
       <h2>Ishonchnoma Narxlari</h2>
       <p><li>⭐1 oylik – 100 000 so‘m</li></p>
       <p><li>⭐6 oylik – 450 000 so‘m</li></p>
       <p><li>⭐3 yillik – 850 000 so‘m</li></p>
       <p><li>⭐General... – ------</li></p>
       <a href="https://t.me/sidiqivich" target="_blank"><button class="btn telegram">Rasmiylashtirish</button></a>
-    </div>
+</div>
 
-    <div class="service-card" id="xizmat">
+     <!-- Xizmatlar -->
+
+<div class="services">
+<div class="services-header">
+    <h1>Xizmatlar</h1>
+    <p>Bizning asosiy xizmatlarimiz</p>
+</div>
+
+<div class="service-card" id="xizmat">
       <h2>Xizmatlar</h2>
       <p><li>⭐My.gov.uz dan malumotlar olish</li></p>
       <p><li>⭐Barcha online to'lovlar (istisno mavjud)</li></p>
@@ -647,9 +657,11 @@ nav ul {
       <p><li>⭐Avtomobilega Tanirovka uchun ruxsatnoma olish</li></p>
       <p><li>⭐Hujatlarni laminat qilish</li></p>
       <p><li>⭐Skanerlash va pdf qilib berish</li></p>
-    </div>
-  </div>
 </div>
+</div>
+</div>
+
+     <!-- Aksiya -->
 
 <div class="promo-banner" id="promo">
   <h1>✨ SUPER AKSIYA! — 1+1 SIM KARTA! ✨</h1>
@@ -663,12 +675,14 @@ nav ul {
   <div class="contact">📞 Murojaat: +998 94 993 9399</div>
 </div>
 
-<!-- PUBG UC Modal -->
+     <!-- PUBG UC Modal -->
 <div id="pubg" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('pubg')">&times;</span>
+<div class="modal-content">
+<span class="close" onclick="closeModal('pubg')">&times;</span>
         <h1>PlayerUnknown's Battlegrounds uchun Uc xarid qiling</h1>
-<!-- Luks tarif + tezkor -->
+
+     <!-- PUBG | Luks tarif + tezkor -->
+
               <section class="card">
               <h2>👑 Luks tarif + tezkor</h2>
               <table class="hours">
@@ -687,7 +701,9 @@ nav ul {
               <a href="https://t.me/zayniddinphp" target="_blank">
       <button class="btn2 instagram2">PUBG UC xarid qilish</button></a>
               </section>
-<!-- Tezkor tarif -->
+
+    <!-- PUBG | Tezkor tarif -->
+
               <section class="card">
               <h2>⚡ Tezkor tarif</h2>
               <table class="hours">
@@ -708,7 +724,9 @@ nav ul {
               <a href="https://t.me/zayniddinphp" target="_blank">
       <button class="btn2 instagram2">PUBG UC xarid qilish</button></a>
               </section>
-<!-- Hamyonbop tarif -->
+
+     <!-- PUBG | Hamyonbop tarif -->
+
               <section class="card">
               <h2>👜 Hamyonbop tarif</h2>
               <table class="hours">
@@ -744,23 +762,23 @@ nav ul {
   </div>
 </div>
 
-<!-- Kitob Modal -->
+     <!-- Kitob Modal -->
 <div id="kitob" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('kitob')">&times;</span>
+<div class="modal-content">
+<span class="close" onclick="closeModal('kitob')">&times;</span>
     <h2>⬇️Kitob chiqarish uchun murojat qiling⬇️</h2>
     <p>Tel: +998 94 993 9399</p>
     <a href="https://t.me/sidiqivich" target="_blank">
       <button class="btn2 telegram2">Telegram</button>
     </a>
-  </div>
+</div>
 </div>
 
 
-<!-- Karalar Modal -->
+     <!-- Karalar Modal -->
 <div id="kartalar" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('kartalar')">&times;</span>
+<div class="modal-content">
+<span class="close" onclick="closeModal('kartalar')">&times;</span>
       <h3>💳 HUMO</h3>
       <ul>
         <h4>9860 1678 3484 6997</h4>
@@ -778,9 +796,10 @@ nav ul {
   <img src="https://click.uz/click/images/logo.svg" style="height:20px; vertical-align:middle; margin-right:8px;" alt="Click logo" />
   Avto to‘lov
 </button>
-  </div>
+</div>
 </div>
 
+         <!---------- Script model | Tugmalar Boshqaruv Modeli ---------->
   <script>
     // Sidebar ochish-yopish
     function toggleSidebar() {
