@@ -86,6 +86,7 @@
       flex-direction: column;
       gap: 15px;
       pointer-events: auto;
+      z-index: 1000;
     }
 
     .sidebar a {
@@ -281,56 +282,6 @@ main {
   font-size: 13px;
 }
 
-/* ====== Xizmatlar bo‘limi ====== */
-.services {
-  padding: 40px 20px;
-  background: var(--black);
-  color: var(--paper);
-  text-align: center;
-}
-
-.services-header h1 {
-  font-size: 28px;
-  color: var(--gold);
-  margin-bottom: 8px;
-}
-
-.services-header p {
-  color: #ccc;
-  font-size: 16px;
-  margin-bottom: 30px;
-}
-
-.services-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.service-card {
-  background: #1a1a1a;
-  border: 1px solid var(--gold);
-  border-radius: 12px;
-  padding: 20px;
-  transition: 0.3s;
-}
-
-.service-card h2 {
-  color: var(--gold);
-  margin-bottom: 10px;
-}
-
-.service-card p {
-  color: #e6e6e6;
-  font-size: 15px;
-}
-
-.service-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 15px rgba(199, 167, 74, 0.4);
-}
 
 
 /* Aksiya banneri */
@@ -545,6 +496,52 @@ main {
   transform: scale(1.08);
 }
 
+
+/* Xizmatlar bo‘limi */
+.services-section {
+  padding: 60px 20px;
+  background: #111; /* qora fon */
+  color: #fff;
+  text-align: center;
+}
+.services-section .section-header h1 {
+  font-size: 2.2rem;
+  color: gold;
+  margin-bottom: 10px;
+}
+.services-section .section-header p {
+  color: #ccc;
+  margin-bottom: 40px;
+}
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+.service-card {
+  background: #1c1c1c;
+  border: 1px solid gold;
+  border-radius: 16px;
+  padding: 25px;
+  transition: 0.3s;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+.service-card h3 {
+  color: gold;
+  margin-bottom: 10px;
+}
+.service-card p {
+  color: #ddd;
+  font-size: 0.95rem;
+}
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+}
+
+
+
+
 @keyframes gradientMove {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -603,7 +600,7 @@ nav ul {
 
 <div class="sidebar" id="sidebar">
   <a href="#" onclick="scrollToHome(); toggleSidebar()">🏘️ Bosh sahifa</a>
-  <a href="javascript:void(0)" onclick="scrollToServices(); toggleSidebar()">📋 Xizmatlar</a>
+  <a href="javascript:void(0)" onclick="scrollToXizmat(); toggleSidebar()">📋 Xizmatlar</a>
   <a href="javascript:void(0)" onclick="scrollToPromo(); toggleSidebar()">🎉 Aksiya</a>
   <a href="javascript:void(0)" onclick="scrollToAutosugurta(); toggleSidebar()">🚗 AvtoSug‘urta Rasmiylashtirish</a>
   <a href="javascript:void(0)" onclick="scrollToIshonchnoma(); toggleSidebar()">📄 Ishonchnoma Rasmiylashtirish</a>
@@ -619,13 +616,15 @@ nav ul {
     <a href="https://instagram.com/sidiqivich" target="_blank"><button class="btn instagram">Instagram</button></a>
     <a href="https://wa.me/998936010203" target="_blank"><button class="btn whatsapp">WhatsApp</button></a>
 </div>
-    <button class="btn1" onclick="scrollToServices()">Avtosug‘urta va Ishonchnoma Rasmiylashtirish</button>
+    <button class="btn1" onclick="scrollToAutosugurta()">Avtosug‘urta va Ishonchnoma Rasmiylashtirish</button>
+
     <button id="pubgBtn" class="btn1" 
  onclick="window.open('https://t.me/uc_vaultphp', '_blank')">
   PUBG UC xarid qilish
 </button>
     <button id="kartaBtn" class="btn1" onclick="openModal('kartalar')">KARTALAR</button>
-    <button class="btn1" onclick="openModal('kitob')">Kitob chiqarish uchun</button>
+    <button class="btn1" onclick="window.open('https://t.me/zayniddinphp', '_blank')">Kitob chiqarish</button>
+
 <main>
      <!-- Ish vaqti jadvali -->
 <div class="sheet">
@@ -638,7 +637,7 @@ nav ul {
       <hr class="divider" />
       <div class="content">
         <section class="card">
-          <h2>+-10</h2>
+          <h2>+-10 m</h2>
           <table class="hours">
             <thead><tr><th>Kun</th><th>Vaqt</th></tr></thead>
             <tbody>
@@ -661,57 +660,54 @@ nav ul {
 </div>
 </main>
 
-<div class="services">
-<div class="services-header">
-</div>
-</div>
-     <!-- AvtoSugurta -->
 
-<div class="services-grid" id="services">
-<div class="service-card"  id="autosugurta">
-      <h2>Avtosug‘urta Narxlari Yengil/Yuk avtomoile</h2>
-      <h4>Toshkent uchun</h4>
-      <p><li>⭐1 yillik – 168 000/---- so‘m</li></p>
-      <h4>Viloyatlar uchun</h4>
-      <p><li>⭐1 oylik – 8 000/10 000 so‘m</li></p>
-      <p><li>⭐6 oylik – 28 000/35000 so‘m</li></p>
-      <p><li>⭐1 yillik – 40 000/48 000 so‘m</li></p>
-      <p><li>⭐UNVERSAL – 120 000/---- so‘m</li></p>
-      <a href="https://t.me/sidiqivich" target="_blank"><button class="btn telegram">Rasmiylashtirish</button></a>
-</div>
 
-     <!-- Ishonchnoma -->
+<!-- Xizmatlar -->
+<section class="services-section" id="xizmat">
+  <div class="section-header">
+    <h1>✨ Bizning Xizmatlar</h1>
+    <p>Siz uchun qulay va tezkor xizmatlar</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <h3>📑 Qisqacha ma'lumot</h3>
+      <p>⭐My.gov.uz dan malumotlar olish</p>
+      <p>⭐Barcha online to'lovlar (istisno mavjud)</p>
+      <p>⭐Kitob chiqarish</p>
+      <p>⭐Har xil fayllarni tahirlash</p>
+      <p>⭐AvtoSug'urta va Ishonchnoma rasmiylashtirish</p>
+      <p>⭐AvtoRaqam Auksion o'ynab berish</p>
+      <p>⭐Avtomobilega Tanirovka uchun ruxsatnoma olish</p>
+      <p>⭐Hujatlarni laminat qilish</p>
+      <p>⭐Skanerlash va pdf qilib berish</p>
+    </div>
+    <div class="service-card" id="autosugurta">
+      <h3>🚙 AvtoSug‘urta narxlari (страховка)</h3>
+      <p>⭐1 yillik – 168 000(Toshkent)🚗</p>
+      <p>⭐1 oylik – 8 000🚗</p>
+      <p>⭐6 oylik – 28 000🚗</p>
+      <p>⭐1 yillik – 40 000🚗</p>
+      <p>⭐UNVERSAL – 120 000🚗</p>
+      <a href="https://t.me/zayniddinphp" target="_blank"><button class="btn telegram">Rasmiylashtirish</button></a>
+    </div>
+    <div class="service-card">
+      <h3>🚛 AvtoSug‘urta narxlari (страховка)</h3>
+      <p>⭐1 oylik – 10 000 so‘m🚚</p>
+      <p>⭐6 oylik – 35000 so‘m🚚</p>
+      <p>⭐1 yillik – 48 000 so‘m🚚</p>
+      <a href="https://t.me/zayniddinphp" target="_blank"><button class="btn telegram">Rasmiylashtirish</button></a>
+    </div>
 
-<div class="service-card"  id="ishonchnoma">
-      <h2>Ishonchnoma Narxlari</h2>
-      <p><li>⭐1 oylik – 100 000 so‘m</li></p>
-      <p><li>⭐6 oylik – 450 000 so‘m</li></p>
-      <p><li>⭐3 yillik – 850 000 so‘m</li></p>
-      <p><li>⭐General... – ------</li></p>
-      <a href="https://t.me/sidiqivich" target="_blank"><button class="btn telegram">Rasmiylashtirish</button></a>
-</div>
+    <div class="service-card" id="ishonchnoma">
+      <h3>🔐 Ishonchnoma narxlari (доверенность)</h3>
+      <p>⭐1 oylik – 100 000 so‘m</p>
+      <p>⭐6 oylik – 450 000 so‘m</p>
+      <p>⭐3 yillik – 850 000 so‘m</p>
+      <a href="https://t.me/zayniddinphp" target="_blank"><button class="btn telegram">Rasmiylashtirish</button></a>
+    </div>
+  </div>
+</section>
 
-     <!-- Xizmatlar -->
-
-<div class="services">
-<div class="services-header">
-    <h1>Xizmatlar</h1>
-    <p>Bizning asosiy xizmatlarimiz</p>
-</div>
-</div>
-
-<div class="service-card" id="xizmat">
-      <h2>Xizmatlar</h2>
-      <p><li>⭐My.gov.uz dan malumotlar olish</li></p>
-      <p><li>⭐Barcha online to'lovlar (istisno mavjud)</li></p>
-      <p><li>⭐Kitob chiqarish</li></p>
-      <p><li>⭐Har xil fayllarni tahirlash</li></p>
-      <p><li>⭐AvtoSug'urta va Ishonchnoma rasmiylashtirish</li></p>
-      <p><li>⭐AvtoRaqam Auksion o'ynab berish</li></p>
-      <p><li>⭐Avtomobilega Tanirovka uchun ruxsatnoma olish</li></p>
-      <p><li>⭐Hujatlarni laminat qilish</li></p>
-      <p><li>⭐Skanerlash va pdf qilib berish</li></p>
-</div>
 
      <!-- Aksiya -->
 
@@ -815,9 +811,19 @@ window.onclick = function(event) {
 </script>
 
 <script>
-function scrollToServices() {
-  document.getElementById("services").scrollIntoView({ behavior: "smooth" });
+
+function scrollToAutosugurta() {
+  document.getElementById("autosugurta").scrollIntoView({ behavior: "smooth" });
 }
+
+function scrollToIshonchnoma() {
+  document.getElementById("ishonchnoma").scrollIntoView({ behavior: "smooth" });
+}
+
+function scrollToXizmat() {
+  document.getElementById("xizmat").scrollIntoView({ behavior: "smooth" });
+}
+
 
 function scrollToPromo() {
   document.getElementById("promo").scrollIntoView({ behavior: "smooth" });
