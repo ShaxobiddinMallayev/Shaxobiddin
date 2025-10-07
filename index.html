@@ -180,108 +180,173 @@
     }
 
    /* ====== Kontent (ish vaqti) ====== */
-main {
-  padding: 30px;
+
+/* === ISH VAQTI BO'LIMI === */
+:root {
+  --gold: #FFD700;
+  --gold-light: #FFF3A0;
+  --dark-bg: #121212;
+  --text-light: #f5f5f5;
+  --open: #00ff99;
+  --closed: #ff4d4d;
+}
+
+/* Ish vaqti konteyneri */
+.worktime-section {
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background: var(--dark-bg);
+  color: var(--text-light);
+  font-family: "Poppins", sans-serif;
 }
 
-.sheet {
+.worktime-card {
   width: 100%;
-  max-width: 900px;
-  background: var(--paper);
-  border-radius: 18px;
-  box-shadow: 0 20px 60px rgba(0,0,0,.45);
-  overflow: hidden;
-  color: var(--black);
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 20px;
+  padding: 30px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  text-align: center;
+  position: relative;
+  overflow: visible;
 }
 
-.header {
-  padding: 28px 22px 10px;
+/* Sarlavha */
+.worktime-card h1 {
+  color: var(--gold);
+  font-size: 26px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.brand h1 {
-  font-size: 24px;
-  margin: 0;
-  font-weight: 800;
-}
-.brand small {
-  display: block;
-  color: var(--grey);
-}
-
-.divider {
-  height: 2px;
-  margin: 14px 22px 0;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  border: 0;
-}
-
-.content {
-  padding: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-}
-
-.card {
-  flex: 1;
-  min-width: 260px;
-  background: #fff;
-  border: 1px solid rgba(199,167,74,.4);
-  border-radius: 16px;
-  padding: 18px;
-  box-shadow: 0 8px 26px rgba(199,167,74,.08);
-}
-
-.card h2 {
-  margin: 0 0 10px;
+.status {
   font-size: 18px;
-  color: #111;
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  animation: glowText 2.5s ease-in-out infinite;
 }
 
-.hours {
+/* Progress konteyner */
+.progress-container {
+  position: relative;
+  width: 100%;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  overflow: visible;
+  box-shadow: inset 0 -2px 6px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
+}
+
+/* Progress chizig'i */
+.progress-bar {
+  position: relative;
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(270deg, var(--gold), var(--gold-light), var(--gold));
+  border-radius: 999px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+  background-size: 200% 200%;
+  animation: moveLight 3s linear infinite;
+  transition: width 0.8s ease;
+}
+
+/* Ustida yuruvchi vaqt belgisi */
+.moving-time {
+  position: absolute;
+  bottom: calc(100% - 45px);
+  left: 0%;
+  transform: translateX(-50%);
+  color: var(--gold-light);
+  font-weight: 600;
+  font-size: 10px;
+  padding: 6px 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  white-space: nowrap;
+  animation: pulseGlow 2s infinite;
+  pointer-events: none;
+}
+
+/* Jadval (kun/vaqt) */
+.schedule {
   width: 100%;
   border-collapse: collapse;
+  margin-top: 10px;
   font-size: 15px;
 }
-.hours th, .hours td {
-  padding: 8px 10px;
-  border-bottom: 1px dashed rgba(0,0,0,.08);
-}
-.hours th {
+.schedule th,
+.schedule td {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   text-align: left;
-  color: #555;
 }
-.hours td {
+.schedule th {
+  color: var(--gold);
   font-weight: 700;
+}
+.schedule tr.today td {
+  color: #fff;
+  font-weight: 700;
+  text-shadow: 0 0 6px var(--gold);
 }
 
 .note {
-  margin-top: 12px;
-  font-size: 13px;
-  background: #fff8e6;
-  border: 1px dashed rgba(176,138,32,.5);
-  padding: 8px 12px;
-  border-radius: 10px;
+  margin-top: 18px;
+  font-size: 14px;
+  color: #aaa;
+  border-top: 1px dashed rgba(255,255,255,0.2);
+  padding-top: 10px;
 }
 
-.footer {
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-  color: var(--grey);
-  font-size: 13px;
+
+/* === Animatsiyalar === */
+@keyframes moveLight {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
+@keyframes glowText {
+  0%, 100% {
+    text-shadow: 0 0 6px var(--gold);
+  }
+  50% {
+    text-shadow: 0 0 12px var(--gold-light);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 200, 0.6);
+  }
+}
+
+/* Responsiv */
+@media (max-width: 600px) {
+  .worktime-card {
+    padding: 20px;
+  }
+  .moving-time {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+}
 
 
 /* Aksiya banneri */
@@ -625,40 +690,39 @@ nav ul {
     <button id="kartaBtn" class="btn1" onclick="openModal('kartalar')">KARTALAR</button>
     <button class="btn1" onclick="window.open('https://t.me/zayniddinphp', '_blank')">Kitob chiqarish</button>
 
-<main>
-     <!-- Ish vaqti jadvali -->
-<div class="sheet">
-<div class="header">
-<div class="brand">
-   <h1>Ish vaqti</h1>
-   <small>Rasmiy jadval</small>
+<!-- 🕒 ISH VAQTI — NOODATIY PREMIUM DIZAYN -->
+
+<section class="worktime-section">
+  <div class="worktime-card">
+    <h1>🕒 Ish vaqti</h1>
+    <p class="status" id="statusText">Holat: yuklanmoqda...</p>
+
+    <div class="progress-container">
+      <div class="progress-bar" id="progressBar">
+        <span id="movingTime" class="moving-time">--:--</span>
       </div>
-      </div>
-      <hr class="divider" />
-      <div class="content">
-        <section class="card">
-          <h2>+-10 m</h2>
-          <table class="hours">
-            <thead><tr><th>Kun</th><th>Vaqt</th></tr></thead>
-            <tbody>
-              <tr><td>Dushanba</td><td>08:30–21:00 +-60 min</td></tr>
-              <tr><td>Seshanba</td><td>08:30–21:00 +-60 min</td></tr>
-              <tr><td>Chorshanba</td><td>08:30–21:00 +-60 min</td></tr>
-              <tr><td>Pashanba</td><td>08:30-21:00 +-60 min</td></tr>
-              <tr><td>Juma</td><td>08:30–21:00 +-60 min</td></tr>
-              <tr><td>Shanba</td><td>09:30–21:00 +-60 min</td></tr>
-              <tr><td>Yakshanba</td><td>09:30-21:00 +-60 min</td></tr>
-            </tbody>
-          </table>
-          <p class="note">Tushlik: 1 soat</p>
-        </section>
-      </div>
-     <div class="footer">
-     <div>Rasmiy jadval</div>
-     <div>Yangilandi: 06.10.2025</div>
-</div>
-</div>
-</main>
+    </div>
+
+    <table class="schedule">
+      <thead>
+        <tr><th>Kun</th><th>Vaqt</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Dushanba</td><td>08:30–21:00</td></tr>
+        <tr><td>Seshanba</td><td>08:30–21:00</td></tr>
+        <tr><td>Chorshanba</td><td>08:30–21:00</td></tr>
+        <tr><td>Payshanba</td><td>08:30–21:00</td></tr>
+        <tr><td>Juma</td><td>08:30–21:00</td></tr>
+        <tr><td>Shanba</td><td>09:30–21:00</td></tr>
+        <tr><td>Yakshanba</td><td>09:30–21:00</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Tushlik vaqti: 60 minut | Yangilandi: 06.10.205</p>
+  </div>
+</section>
+
+
+
 
 
 
@@ -840,7 +904,79 @@ function scrollToAutosugurta() {
 function scrollToIshonchnoma() {
   document.getElementById("ishonchnoma").scrollIntoView({ behavior: "smooth" });
 }
+
+
 </script>
+
+<script>
+function updateWorktime() {
+  const now = new Date();
+  const day = now.getDay();
+  const hour = now.getHours() + now.getMinutes() / 60;
+  const statusText = document.getElementById("statusText");
+  const progressBar = document.getElementById("progressBar");
+  const movingTime = document.getElementById("movingTime");
+  const rows = document.querySelectorAll(".schedule tbody tr");
+
+  // Bugungi kunni jadvalda belgilash
+  rows.forEach((row, index) => {
+    row.classList.toggle("today", index === (day === 0 ? 6 : day - 1));
+  });
+
+  // Ish vaqti
+  let open = 8.5, close = 21;
+  if (day === 6 || day === 0) { // Shanba va yakshanba
+    open = 9.5; close = 21;
+  }
+
+  // Progress foizi
+  let progress = ((hour - open) / (close - open)) * 100;
+  progress = Math.min(Math.max(progress, 0), 100);
+  progressBar.style.width = progress + "%";
+  movingTime.style.left = `calc(${progress}% + 120px)`;
+movingTime.style.transition = "left 1s linear"; // silliq harakat
+
+  
+
+  // Hozirgi vaqt
+  const pad = n => (n < 10 ? "0" + n : n);
+  const currentTime = `${pad(now.getHours())}:${pad(now.getMinutes())}`;
+
+  if (hour >= open && hour <= close) {
+    // Ish vaqti ichida
+    const remaining = close - hour;
+    const rh = Math.floor(remaining);
+    const rm = Math.floor((remaining - rh) * 60);
+
+    statusText.innerHTML = `Holat: <span style='color:#00ff99;'>OCHIQ ✅</span>`;
+    movingTime.textContent = `⏳ ${rh} soat ${rm} daqiqa qoldi`;
+  } else {
+    // Ish yopiq
+    statusText.innerHTML = `Holat: <span style='color:#ff6666;'>YOPIQ ❌</span>`;
+    
+    // Qachon ochiladi
+    let nextOpen = open;
+    let remaining = 0;
+
+    if (hour < open) {
+      remaining = open - hour;
+    } else {
+      remaining = (24 - hour) + open;
+    }
+
+    const rh = Math.floor(remaining);
+    const rm = Math.floor((remaining - rh) * 60);
+
+        movingTime.textContent = `🕓 ${rh} soat ${rm} daqiqa qolgan`;
+  }
+}
+
+// Har 1 daqiqada yangilash
+updateWorktime();
+setInterval(updateWorktime, 60000);
+</script>
+
+
 
 
 </body>
