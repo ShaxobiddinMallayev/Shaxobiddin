@@ -933,7 +933,7 @@ function updateWorktime() {
   let progress = ((hour - open) / (close - open)) * 100;
   progress = Math.min(Math.max(progress, 0), 100);
   progressBar.style.width = progress + "%";
-  movingTime.style.left = `calc(${progress}% + 100px)`;
+  movingTime.style.left = `calc(${progress}% + 80px)`;
 movingTime.style.transition = "left 1s linear"; // silliq harakat
 
   
