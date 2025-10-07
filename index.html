@@ -219,7 +219,7 @@
 .worktime-card h1 {
   color: var(--gold);
   font-size: 26px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   letter-spacing: 1px;
 }
 
@@ -933,7 +933,7 @@ function updateWorktime() {
   let progress = ((hour - open) / (close - open)) * 100;
   progress = Math.min(Math.max(progress, 0), 100);
   progressBar.style.width = progress + "%";
-  movingTime.style.left = `calc(${progress}% + 80px)`;
+  movingTime.style.left = `calc(${progress}% + 70px)`;
 movingTime.style.transition = "left 1s linear"; // silliq harakat
 
   
@@ -949,7 +949,7 @@ movingTime.style.transition = "left 1s linear"; // silliq harakat
     const rm = Math.floor((remaining - rh) * 60);
 
     statusText.innerHTML = `Holat: <span style='color:#00ff99;'>OCHIQ ✅</span>`;
-    movingTime.textContent = `⏳ ${rh} soat ${rm} daqiqa qoldi`;
+    movingTime.textContent = `Yopilishimiz: ⏳ ${rh} soat ${rm} daqiqadan keyin`;
   } else {
     // Ish yopiq
     statusText.innerHTML = `Holat: <span style='color:#ff6666;'>YOPIQ ❌</span>`;
@@ -967,7 +967,7 @@ movingTime.style.transition = "left 1s linear"; // silliq harakat
     const rh = Math.floor(remaining);
     const rm = Math.floor((remaining - rh) * 60);
 
-        movingTime.textContent = `🕓 ${rh} soat ${rm} daqiqa qolgan`;
+        movingTime.textContent = `Ochilamiz: 🕓 ${rh} soat ${rm} daqidan keyin`;
   }
 }
 
