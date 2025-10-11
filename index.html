@@ -256,24 +256,6 @@
   transition: width 0.8s ease;
 }
 
-/* Ustida yuruvchi vaqt belgisi */
-.moving-time {
-  position: absolute;
-  bottom: calc(100% - 45px); /* Chiziqdan yuqoriga joylash */
-  left: 260%;                 /* Gorizontal markaz */
-  transform: translateX(-50%); /* Markazdan aniq o‘rtalash */
-  color: var(--gold-light);
-  font-weight: 600;
-  font-size: 12px;
-  padding: 4px 8px;
-  border-radius: 8px;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
-  white-space: nowrap;
-  transition: none; /* Harakatlanmasin */
-}
-
 
 
 /* Jadval (kun/vaqt) */
@@ -950,7 +932,6 @@ movingTime.style.transition = "left 1s linear"; // silliq harakat
     const rm = Math.floor((remaining - rh) * 60);
 
     statusText.innerHTML = `Holat: <span style='color:#00ff99;'>OCHIQ ✅</span>`;
-    movingTime.textContent = `Yopilishimizga; ⏳ ${rh} soat ${rm} daqiqa qoldi`;
   } else {
     // Ish yopiq
     statusText.innerHTML = `Holat: <span style='color:#ff6666;'>YOPIQ ❌</span>`;
@@ -967,8 +948,6 @@ movingTime.style.transition = "left 1s linear"; // silliq harakat
 
     const rh = Math.floor(remaining);
     const rm = Math.floor((remaining - rh) * 60);
-
-        movingTime.textContent = `Ochilishimizga: 🕓 ${rh} soat ${rm} daqiqa qolgan`;
   }
 }
 
