@@ -219,7 +219,7 @@
 .worktime-card h1 {
   color: var(--gold);
   font-size: 26px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   letter-spacing: 1px;
 }
 
@@ -259,7 +259,7 @@
 .moving-time {
   position: absolute;
   bottom: calc(100% - 45px);
-  left: 0%;
+  left: 550%;
   transform: translateX(-50%);
   color: var(--gold-light);
   font-weight: 600;
@@ -717,7 +717,7 @@ nav ul {
         <tr><td>Yakshanba</td><td>09:30–21:00</td></tr>
       </tbody>
     </table>
-    <p class="note">Tushlik vaqti: 60 minut | Yangilandi: 06.10.2025</p>
+    <p class="note">Tushlik vaqti: 60 minut | Yangilandi: 06.10.205</p>
   </div>
 </section>
 
@@ -933,7 +933,6 @@ function updateWorktime() {
   let progress = ((hour - open) / (close - open)) * 100;
   progress = Math.min(Math.max(progress, 0), 100);
   progressBar.style.width = progress + "%";
-  movingTime.style.left = `calc(${progress}% + 70px)`;
 movingTime.style.transition = "left 1s linear"; // silliq harakat
 
   
@@ -949,7 +948,7 @@ movingTime.style.transition = "left 1s linear"; // silliq harakat
     const rm = Math.floor((remaining - rh) * 60);
 
     statusText.innerHTML = `Holat: <span style='color:#00ff99;'>OCHIQ ✅</span>`;
-    movingTime.textContent = `Yopilamiz: ⏳ ${rh} soat ${rm} daqiqadan keyin`;
+    movingTime.textContent = `⏳ ${rh} soat ${rm} daqiqa qoldi`;
   } else {
     // Ish yopiq
     statusText.innerHTML = `Holat: <span style='color:#ff6666;'>YOPIQ ❌</span>`;
@@ -967,7 +966,7 @@ movingTime.style.transition = "left 1s linear"; // silliq harakat
     const rh = Math.floor(remaining);
     const rm = Math.floor((remaining - rh) * 60);
 
-        movingTime.textContent = `Ochilamiz: 🕓 ${rh} soat ${rm} daqidan keyin`;
+        movingTime.textContent = `🕓 ${rh} soat ${rm} daqiqa qolgan`;
   }
 }
 
