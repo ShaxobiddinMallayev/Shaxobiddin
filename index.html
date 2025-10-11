@@ -259,20 +259,19 @@
 .moving-time {
   position: absolute;
   bottom: calc(100% - 45px);
-  left: 550%;
-  transform: translateX(-50%);
+  left: 110px;
+  transform: translateX(0);
   color: var(--gold-light);
   font-weight: 600;
-  font-size: 10px;
-  padding: 6px 10px;
-  border-radius: 10px;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 8px;
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(6px);
   box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
   white-space: nowrap;
-  animation: pulseGlow 2s infinite;
-  pointer-events: none;
 }
+
 
 /* Jadval (kun/vaqt) */
 .schedule {
@@ -948,7 +947,7 @@ movingTime.style.transition = "left 1s linear"; // silliq harakat
     const rm = Math.floor((remaining - rh) * 60);
 
     statusText.innerHTML = `Holat: <span style='color:#00ff99;'>OCHIQ ✅</span>`;
-    movingTime.textContent = `⏳ ${rh} soat ${rm} daqiqa qoldi`;
+    movingTime.textContent = `Yopilishimizga; ⏳ ${rh} soat ${rm} daqiqa qoldi`;
   } else {
     // Ish yopiq
     statusText.innerHTML = `Holat: <span style='color:#ff6666;'>YOPIQ ❌</span>`;
@@ -966,7 +965,7 @@ movingTime.style.transition = "left 1s linear"; // silliq harakat
     const rh = Math.floor(remaining);
     const rm = Math.floor((remaining - rh) * 60);
 
-        movingTime.textContent = `🕓 ${rh} soat ${rm} daqiqa qolgan`;
+        movingTime.textContent = `Ochilishimizga: 🕓 ${rh} soat ${rm} daqiqa qolgan`;
   }
 }
 
