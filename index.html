@@ -588,6 +588,109 @@
   box-shadow: 0 10px 25px rgba(0,0,0,0.6);
 }
 
+/* ===== AVTOSUG‘URTA — MOBILGA MOS ===== */
+
+.insurance-section {
+  padding: 60px 20px;
+  background: #0f0f10;
+  color: #fff;
+  text-align: center;
+}
+
+.insurance-section h2 {
+  color: gold;
+  font-size: 28px;
+  margin-bottom: 8px;
+}
+
+.insurance-section .subtitle {
+  color: #bbb;
+  margin-bottom: 35px;
+}
+
+.insurance-box {
+  background: #151515;
+  border: 1px solid gold;
+  border-radius: 18px;
+  padding: 25px;
+  margin-bottom: 35px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.6);
+}
+
+.insurance-box h3 {
+  color: gold;
+  margin-bottom: 15px;
+}
+
+/* 📱 MUHIM QISM — jadval o‘rami */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+}
+
+/* Jadval */
+.insurance-box table {
+  width: 100%;
+  min-width: 720px; /* telefon uchun SHART */
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.insurance-box th,
+.insurance-box td {
+  padding: 12px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  white-space: nowrap;
+}
+
+.insurance-box th {
+  background: rgba(255,215,0,0.12);
+  color: gold;
+  font-weight: 600;
+}
+
+.insurance-box tr:hover {
+  background: rgba(255,255,255,0.05);
+}
+
+/* Scroll chiroyli */
+.table-wrapper::-webkit-scrollbar {
+  height: 6px;
+}
+.table-wrapper::-webkit-scrollbar-thumb {
+  background: gold;
+  border-radius: 10px;
+}
+.table-wrapper::-webkit-scrollbar-track {
+  background: #222;
+}
+
+/* 📱 Kichik ekran */
+@media (max-width: 768px) {
+  .insurance-section h2 {
+    font-size: 22px;
+  }
+
+  .insurance-box h3 {
+    font-size: 18px;
+  }
+
+  .insurance-box th,
+  .insurance-box td {
+    font-size: 13px;
+    padding: 10px 8px;
+  }
+}
+
+
+/* Mobil uchun */
+@media (max-width: 768px) {
+  .insurance-box table {
+    font-size: 13px;
+  }
+}
 
 
 
@@ -727,23 +830,96 @@ nav ul {
       <p>⭐Hujatlarni laminat qilish</p>
       <p>⭐Skanerlash va pdf qilib berish</p>
     </div>
-    <div class="service-card" id="autosugurta">
-      <h3>🚙 AvtoSug‘urta narxlari (страховка)</h3>
-      <p>⭐1 yillik – 168 000(Toshkent)🚗</p>
-      <p>⭐1 oylik – 8 000🚗</p>
-      <p>⭐6 oylik – 28 000🚗</p>
-      <p>⭐1 yillik – 40 000🚗</p>
-      <p>⭐UNVERSAL – 120 000🚗</p>
-      <a href="https://t.me/zayniddinphp" target="_blank"><button class="btn telegram">Rasmiylashtirish</button></a>
+<section class="insurance-section" id="autosugurta">
+
+
+  <!-- YENGIL AVTOMOBIL -->
+  <div class="insurance-box">
+    <h3>🚘 Yengil avtomobil</h3>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Muddat</th>
+            <th>Viloyat<br>(Oddiy)</th>
+            <th>Viloyat<br>(Universal)</th>
+            <th>Toshkent<br>(Oddiy)</th>
+            <th>Toshkent<br>(Universal)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>12 oy</td>
+            <td>160 000</td>
+            <td>320 000</td>
+            <td>192 000</td>
+            <td>384 000</td>
+          </tr>
+          <tr>
+            <td>6 oy</td>
+            <td>112 000</td>
+            <td>224 000</td>
+            <td>134 400</td>
+            <td>268 800</td>
+          </tr>
+          <tr>
+            <td>20 kun</td>
+            <td>32 000</td>
+            <td>64 000</td>
+            <td>38 400</td>
+            <td>76 800</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    <div class="service-card">
-      <h3>🚛 AvtoSug‘urta narxlari (страховка)</h3>
-      <p>⭐1 oylik – 10 000 so‘m🚚</p>
-      <p>⭐6 oylik – 35 000 so‘m🚚</p>
-      <p>⭐1 yillik – 48 000 so‘m🚚</p>
-      <p>⭐UNVERSAL – 144 000🚚</p>
-      <a href="https://t.me/zayniddinphp" target="_blank"><button class="btn telegram">Rasmiylashtirish</button></a>
+  </div>
+
+  <!-- YUK AVTOMOBIL -->
+  <div class="insurance-box">
+    <h3>🚛 Yuk avtomobil</h3>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Muddat</th>
+            <th>Viloyat<br>(Oddiy)</th>
+            <th>Viloyat<br>(Universal)</th>
+            <th>Toshkent<br>(Oddiy)</th>
+            <th>Toshkent<br>(Universal)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>12 oy</td>
+            <td>280 000</td>
+            <td>560 000</td>
+            <td>336 000</td>
+            <td>672 000</td>
+          </tr>
+          <tr>
+            <td>6 oy</td>
+            <td>196 000</td>
+            <td>392 000</td>
+            <td>235 200</td>
+            <td>470 400</td>
+          </tr>
+          <tr>
+            <td>20 kun</td>
+            <td>56 000</td>
+            <td>112 000</td>
+            <td>67 200</td>
+            <td>134 400</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+  </div>
+
+</section>
+
+
 
     <div class="service-card" id="ishonchnoma">
       <h3>🔐 Ishonchnoma narxlari (доверенность)</h3>
